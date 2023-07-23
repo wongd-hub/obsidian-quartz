@@ -1,2 +1,0 @@
-#codecademy-typescript
-
