@@ -1,3 +1,6 @@
+---
+title: "2 D3 Selection"
+---
 #codecademy-d3 
 
 D3 works by 'injecting' data visualisations onto an object's [[Document Object Model]], and associates data with a set of DOM elements.

@@ -1,3 +1,6 @@
+---
+title: "Farrington Flexible Aberration Detection"
+---
 #excess-mortality #regression
 
 - A quasi-Poisson regression-based aberration detection algorithm
@@ -31,21 +34,21 @@
 	- To capture seasonality, a yearly 10-level factor, whose reference period comprises comparable weeks in previous years (as discussed above).
 - The functional form is as follows ($i$ refers to the week number):
 
-$$log(\mu_i) = \theta + \beta t_i + \delta_{j(t_i)}$$
+$$log(\mu_i) = 	heta + eta t_i + \delta_{j(t_i)}$$
 
 Where:
 - $\mu_i$ is the mean (expected) count, with variance $\phi\mu_i$
-- $\theta$ is the constant/intercept
+- $	heta$ is the constant/intercept
 - $\delta_{j(t_i)}$ is the 10-level factor
 
 - An exceedance score is then calculated finding the distance between the observed count in the target week and what was modelled for it with the quasi-Poisson regression. 
-- The count is flagged as an outbreak if this distance is larger than the distance between the modelled mean and the 95% (or $\alpha$%) upper threshold of the Negative Binomial quantile.
+- The count is flagged as an outbreak if this distance is larger than the distance between the modelled mean and the 95% (or $lpha$%) upper threshold of the Negative Binomial quantile.
 	- In other words the exceedance score, $X$ is calculated; and if $X \ge 1$ then the week's count is flagged as an outbreak, where:
-$$X = \frac{y_0 - \hat{\mu_0}}{U-\hat{\mu_0}}$$
+$$X = rac{y_0 - \hat{\mu_0}}{U-\hat{\mu_0}}$$
 Where:
 - $y_0$ is the observed count in the target week
-- $\hat{\mu_0}$ is the expected count, calculated as $\hat{\mu_0} = \hat\theta + \hat{\beta}t_0+\delta_{j(t_0)}$
-- $U$ is the upper threshold, the $100(1-\alpha)\%$ Negative Binomial quantile
+- $\hat{\mu_0}$ is the expected count, calculated as $\hat{\mu_0} = \hat	heta + \hat{eta}t_0+\delta_{j(t_0)}$
+- $U$ is the upper threshold, the $100(1-lpha)\%$ Negative Binomial quantile
 
 ## Example
 

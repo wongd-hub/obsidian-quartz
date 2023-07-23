@@ -1,3 +1,6 @@
+---
+title: "1 D3 Overview"
+---
 #codecademy-d3
 
 * D3 stands for Data-Driven Documents and has risen to popularity due to various reasons:

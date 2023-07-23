@@ -1,3 +1,6 @@
+---
+title: "4 Statistical Significance"
+---
 #coursera-inferential-stats #statistics 
 
 ## Table of contents
@@ -11,8 +14,8 @@
 
 The methods we've been learning can be applied to other estimators that have nearly-normal sampling distributions, which are listed here:
 
-- The sample mean ($\bar{x}$)
-- The difference between two sample means ($\bar{x}_1 - \bar{x}_2$)
+- The sample mean ($ar{x}$)
+- The difference between two sample means ($ar{x}_1 - ar{x}_2$)
 - Sample proportion ($\hat{p}$)
 - The difference between sample proportions ($\hat{p}_1 - \hat{p}_2$)
 
@@ -20,7 +23,7 @@ The methods we've been learning can be applied to other estimators that have nea
 
 An important assumption about these point estimates is that they are unbiased - their sampling distribution is centred on the true population parameter it estimates. In other words, it does not naturally overor under-estimate the population parameter.
 
-For nearly-normal estimators, the confidence interval equation remains $\text{point estimate} \pm z^*SE$; all we'll need to do is swap out the formula for the standard error of a different estimate.
+For nearly-normal estimators, the confidence interval equation remains $	ext{point estimate} \pm z^*SE$; all we'll need to do is swap out the formula for the standard error of a different estimate.
 
 We'll go through high level examples here using different standard errors, but we'll go into more detail on each of these later on.
 
@@ -34,21 +37,22 @@ We have a few pieces of information given to us:
 - $\hat{p} = 0.33$
 - $SE = 0.014$
 
-Now to our [[2 Confidence Intervals|confidence interval]]: $\text{point estimate} \pm z^*SE \to 0.33 \pm 1.96 \times 0.014 \to \left(0.303, 0.357\right)$. The critical value is still 1.96 because this point estimate is still nearly-normal.
+Now to our [[2 Confidence Intervals|confidence interval]]: $	ext{point estimate} \pm z^*SE 	o 0.33 \pm 1.96 	imes 0.014 	o \left(0.303, 0.357ight)$. The critical value is still 1.96 because this point estimate is still nearly-normal.
 
 So we are 95% confident that between 30.3% and 35.7% of college graduates watch the Daily Show.
 
 Since this estimator is unbiased, and again - the sampling distribution of this estimator is nearly-normal, we can calculate a z-score from which we can use to produce probabilities.
 
-$$Z = \frac{\text{point estimate} - \text{null value}}{SE}$$
+$$Z = rac{	ext{point estimate} - 	ext{null value}}{SE}$$
 
 #### Example 2
 
 The third national health and nutrition examination survey NHANES, collected body fat percentage and gender data from over 13,000 subjects in ages between 20 to 80. The average body fat percentage for the 6,580 men in the sample was 23.9%. And this value was 35% for the 7,021 women. The standard error for the difference between the average male and female body fat percentages was 0.114. Do these data provide convincing evidence that men and women have different average body fat percentages? You may assume that the distribution of the point estimate is nearly normal.
 
-The population parameter we'll be estimating here is $\mu = \text{the average body fat percentage in the population}$; but across two different population groups.
+The population parameter we'll be estimating here is $\mu = 	ext{the average body fat percentage in the population}$; but across two different population groups.
 
-1. Set hypotheses: $H_0: \mu_{men} = \mu_{women}$, $H_A = \mu_{men} \neq \mu_{women}$
+1. Set hypotheses: $H_0: \mu_{men} = \mu_{women}$, $H_A = \mu_{men} 
+eq \mu_{women}$
 
 2. Calculate the point estimate: $\mu_{men} - \mu_{women} = 23.9 - 35 = -11.1$
 
@@ -58,13 +62,13 @@ The population parameter we'll be estimating here is $\mu = \text{the average bo
 
 What does our sampling distribution centre on? It usually centres on the null hypothesis value of the population parameter, but the original form of our hypothesis does not have an asserted value. For tests between two population means, we can re-write the null hypothesis as:
 
-$$H_0: \mu_{men} = \mu_{women} \to \mu_{men} - \mu_{women} = 0$$
+$$H_0: \mu_{men} = \mu_{women} 	o \mu_{men} - \mu_{women} = 0$$
 
 So our sampling distribution here centres on 0, and our p-value is looking at the area under the CDF for values smaller than -11.1 and values greater than 11.1.
 
-We do not yet know how to calculate the sample standard error of the difference between two population means, but we are given this value for now, so we can calculate our z-score as $Z = \frac{-11.1 - 0}{0.114} = -97.4$.
+We do not yet know how to calculate the sample standard error of the difference between two population means, but we are given this value for now, so we can calculate our z-score as $Z = rac{-11.1 - 0}{0.114} = -97.4$.
 
-$$P(Z < -97.4) + P(Z > 97.4) \approx 0$$
+$$P(Z < -97.4) + P(Z > 97.4) pprox 0$$
 
 1. What is the interpretation of this p-value in the context of the research question?
 
@@ -93,13 +97,13 @@ This is a subjective question; however this brings to mind a quote by William Bl
 
 #### Type I errors
 
-- We reject $H_0$ when the p-value is below the significance level ($\alpha$), which is generally set at 5%.
+- We reject $H_0$ when the p-value is below the significance level ($lpha$), which is generally set at 5%.
 
 - This translates to us not wanting to reject $H_0$ incorrectly at least 5% of the time.
 
-Hence, the probability of making a Type I error is equal to $P\left(\text{Type I error} | H_0\text{ true}\right) = \alpha$; this is why we prefer smaller values of $\alpha$.
+Hence, the probability of making a Type I error is equal to $P\left(	ext{Type I error} | H_0	ext{ true}ight) = lpha$; this is why we prefer smaller values of $lpha$.
 
-So how do we choose our $\alpha$?
+So how do we choose our $lpha$?
 
 - If a Type I error is especially dangerous or costly, set your significance level small to reduce the chance of a Type I error. By doing this, we demand very strong evidence that the null hypothesis is not the case in order to reject it.
 
@@ -112,14 +116,14 @@ So how do we choose our $\alpha$?
 So:
 
 - Given that the null hypothesis is true; you can either:
-	- Incorrectly reject the null hypothesis, with probability $\alpha$
-	- Correctly retain the null hypothesis, with probability $1 - \alpha$
+	- Incorrectly reject the null hypothesis, with probability $lpha$
+	- Correctly retain the null hypothesis, with probability $1 - lpha$
 
 - Given that the alternative hypothesis is true; you can either:
-	- Incorrectly reject the alternative hypothesis, with probability $\beta$ (your Type II error)
-	- Correctly reject the null hypothesis, with probability $1 - \beta$. This probability is referred to as the *power* of your test, and is the probability of correctly rejecting $H_0$ (given $H_A$ is true). Note that $\beta$ is not trivial to calculate.
+	- Incorrectly reject the alternative hypothesis, with probability $eta$ (your Type II error)
+	- Correctly reject the null hypothesis, with probability $1 - eta$. This probability is referred to as the *power* of your test, and is the probability of correctly rejecting $H_0$ (given $H_A$ is true). Note that $eta$ is not trivial to calculate.
 
-Our goal is to keep both $\alpha$ and $\beta$ low at the same time; but we know that if we push one down, the other will shoot up. We generally want to find a good balance between the two.
+Our goal is to keep both $lpha$ and $eta$ low at the same time; but we know that if we push one down, the other will shoot up. We generally want to find a good balance between the two.
 
 #### Type II errors
 
@@ -127,7 +131,7 @@ Our goal is to keep both $\alpha$ and $\beta$ low at the same time; but we know 
 
 - The answer is not obvious.
 	- If the true population mean is very close to the null hypothesis, then it will be hard to detect a difference and therefore reject $H_0$.
-	- Clearly then, $\beta$ is dependent on the effect size ($\delta$) - which is the difference between the point estimate and the null value.
+	- Clearly then, $eta$ is dependent on the effect size ($\delta$) - which is the difference between the point estimate and the null value.
 
 ## Significance vs. Confidence Level
 
@@ -142,8 +146,8 @@ Broadly speaking, we can say that the significance level and confidence level ar
 
 So:
 
-- A two-sided hypothesis test with significance level of $\alpha$ is equivalent to a confidence interval with CL = $1 - \alpha$.
-- A one-sided hypothesis test with significance level of $\alpha$ is equivalent to a confidence interval with CL = $1 - 2 \times \alpha$.
+- A two-sided hypothesis test with significance level of $lpha$ is equivalent to a confidence interval with CL = $1 - lpha$.
+- A one-sided hypothesis test with significance level of $lpha$ is equivalent to a confidence interval with CL = $1 - 2 	imes lpha$.
 - If $H_0$ is rejected, a CI that agrees with its corresponding hypothesis test should *not include* the null value.
 - If $H_0$ is failed to be rejected, a CI that agrees with its corresponding HT should *include* the null value.
 
@@ -158,7 +162,7 @@ Consider two scenarios, ceteris paribus, in which scenario will the p-value be l
 
 We can see how this will affect the hypothesis test by considering the components that it affects first: the standard error.
 
-$$Z = \frac{\bar{x} - \mu}{SE} = \frac{\bar{x} - \mu}{\frac{s}{\sqrt{n}}}$$
+$$Z = rac{ar{x} - \mu}{SE} = rac{ar{x} - \mu}{rac{s}{\sqrt{n}}}$$
 
 As $n$ increases, the SE will decrease, driving up the Z-score which means that the point at which you measure your p-value on the distribution (i.e. your test statistic) is being moved further from the center; thus decreasing p-value.
 
@@ -166,11 +170,11 @@ As $n$ increases, the SE will decrease, driving up the Z-score which means that 
 
 Consider the following example where the sample statistic is very close to the null hypothesis parameter value:
 
-$$H_0: \mu = 49.5, H_A: \mu > 49.5, \bar{x} = 50, s = 2$$
+$$H_0: \mu = 49.5, H_A: \mu > 49.5, ar{x} = 50, s = 2$$
 
-If n = 100; $Z = \frac{50-49.5}{\frac{2}{100}} = \frac{50-49.5}{\frac{2}{10}} = 0.5/0.2 = 2.5$
+If n = 100; $Z = rac{50-49.5}{rac{2}{100}} = rac{50-49.5}{rac{2}{10}} = 0.5/0.2 = 2.5$
 
-If n = 10,000; $Z = \frac{50-49.5}{\frac{2}{10000}} = \frac{50-49.5}{\frac{2}{100}} = 0.5/0.02 = 25$
+If n = 10,000; $Z = rac{50-49.5}{rac{2}{10000}} = rac{50-49.5}{rac{2}{100}} = 0.5/0.02 = 25$
 
 Clearly this is a very large difference in outcomes. A z-score of 25 will have a near-zero p-value, and so is a highly statistically significant finding - however, is it practically significant?
 

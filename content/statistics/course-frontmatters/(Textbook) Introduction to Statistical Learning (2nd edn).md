@@ -1,3 +1,6 @@
+---
+title: "(Textbook) Introduction to Statistical Learning (2nd edn)"
+---
 #textbook-intro-to-statistical-learning #moc
 
 Authors: Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani | [Website](https://www.statlearning.com/)
@@ -14,7 +17,3 @@ Authors: Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani | [Websi
 		* [[2.1.3 The Trade-Off Between Prediction Accuracy and Model Interpretability]]
 		* [[2.1.4 Supervised Versus Unsupervised Learning]]
 		* [[2.1.5 Regression Versus Classification Problems]]
-
-
-
-

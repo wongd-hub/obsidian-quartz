@@ -1,3 +1,6 @@
+---
+title: "6 ANOVA and Bootstrapping"
+---
 #coursera-inferential-stats #statistics 
 
 ## Table of contents
@@ -24,11 +27,11 @@ We can use Analysis of Variance (ANOVA) to analyse 3+ means (whereas the [[5 t-d
 
 - As with in a t-test, ANOVA compares the means of multiple groups to see if they're so far apart that their difference cannot be reasonably attributed to sampling variability.
 
-- $H_0: \mu_1 = \mu_2 = \dots = \mu_k, H_A = \text{At least one pair of means are different to each other}$
+- $H_0: \mu_1 = \mu_2 = \dots = \mu_k, H_A = 	ext{At least one pair of means are different to each other}$
 	- Where $k$ is the number of groups
 
 - As with the t-statistic (a ratio of size of effect to standard error), the F-statistic is a ratio of the variability between groups over the variability within groups.
-	- $F = \frac{\text{variability between groups}}{\text{variability within groups}}$
+	- $F = rac{	ext{variability between groups}}{	ext{variability within groups}}$
 	- Recall that large test statistics lead to small p-values, which means you're more likely to find that there is at least one difference between a pair of means. Naturally, this means that you have a higher variability between groups relative to the variability within groups.
 
 - The F-distribution is right skewed and always positive (as its a ratio of two variances, which can never be negative)
@@ -59,9 +62,9 @@ Here's a look at what an ANOVA output table looks like; we'll go through each co
 
 The last value in this column is Sum of Squares Total (SST), and it measures the total variability in the response variable. It is calculated in a similar manner to variance, but without adjusting for sample size. In other words, this is the sum of squared deviation from the mean in the response variable.
 
-$$SST = \sum^n_{i=1}\left(y_i-\bar{y}\right)^2$$
+$$SST = \sum^n_{i=1}\left(y_i-ar{y}ight)^2$$
 
-Where $y_i$ represents each observation in the dataset, and $\bar{y}$ is the grand mean across all observations.
+Where $y_i$ represents each observation in the dataset, and $ar{y}$ is the grand mean across all observations.
 
 *Sum of Squares between Groups (SSG)*
 
@@ -69,9 +72,9 @@ The first value in this column is called the Sum of Squares between Groups (SSG)
 
 This is calculated as the sum of deviations of group means from the overall mean, weighted by the sample size of each group:
 
-$$SSG = \sum^k_{j=1}n_j\left(\bar{y}_j-\bar{y}\right)$$
+$$SSG = \sum^k_{j=1}n_j\left(ar{y}_j-ar{y}ight)$$
 
-Where $n_j$ is the number of observations in group $j$, $\bar{y}_j$ is the mean of the response variable in group $j$, and $\bar{y}$ is the grand mean across all observations.
+Where $n_j$ is the number of observations in group $j$, $ar{y}_j$ is the mean of the response variable in group $j$, and $ar{y}$ is the grand mean across all observations.
 
 For this example, the SSG is about 7.6% of the SST; i.e. 7.6% of total variability in the vocabulary scores is explained by difference in social class, and the remainder is explained by other factors.
 
@@ -103,7 +106,7 @@ Next, the Mean Squares are calculated as follows:
 
 The F-statistic is the ratio between the average between and within group variabilities:
 
-$$F = \frac{MSG}{MSE}$$
+$$F = rac{MSG}{MSE}$$
 
 #### P-value
 
@@ -123,8 +126,8 @@ pf(21.735, 3, 791, lower.tail = FALSE)
 
 As with previous [[3 Hypothesis Testing|hypothesis tests]]:
 
-- If the p-value is small/less than $\alpha$, we reject the null hypothesis and conclude that there is evidence that at least one pair of means is different (although we can't tell which one at this stage).
-- Otherwise if the p-value is larger than $\alpha$, we do not reject the null hypothesis and conclude that there is no evidence that any pair of means is statistically significantly different from the other.
+- If the p-value is small/less than $lpha$, we reject the null hypothesis and conclude that there is evidence that at least one pair of means is different (although we can't tell which one at this stage).
+- Otherwise if the p-value is larger than $lpha$, we do not reject the null hypothesis and conclude that there is no evidence that any pair of means is statistically significantly different from the other.
 
 ## Conditions for ANOVA
 
@@ -164,21 +167,21 @@ Finding a statistically significant result with ANOVA only tells us that one pai
 
 Recall that the Type I error rate is the probability that you will commit a Type I error; performing many pair-wise tests simultaneously inflates your Type I error rate which is undesirable.
 
-The solution to this is simple, use a modified, more conservative significance level. This is achieved by using the *Bonferroni correction*, which adjusts $\alpha$ by the number of comparisons being considered.
+The solution to this is simple, use a modified, more conservative significance level. This is achieved by using the *Bonferroni correction*, which adjusts $lpha$ by the number of comparisons being considered.
 
 **Bonferroni correction**
 
 The adjusted significance level is defined as:
 
-$$\alpha^* = \alpha/K$$
+$$lpha^* = lpha/K$$
 
-Where $K = \frac{k\left(k-1\right)}{2}$ is the number of comparisons that will take place in your multiple comparisons process ($k$ being the number of means you have on hand to compare).
+Where $K = rac{k\left(k-1ight)}{2}$ is the number of comparisons that will take place in your multiple comparisons process ($k$ being the number of means you have on hand to compare).
 
-Back to our example, we have four means so $k = 4$, and our initial $\alpha$ is $0.05$. For this example, $K = 6$, and $\alpha^* = 0.05 / 6 \approx 0.0083$
+Back to our example, we have four means so $k = 4$, and our initial $lpha$ is $0.05$. For this example, $K = 6$, and $lpha^* = 0.05 / 6 pprox 0.0083$
 
 **Standard error for multiple pairwise comparisons**
 
-$$SE = \sqrt{\frac{MSE}{n_1} + \frac{MSE}{n_2}}$$
+$$SE = \sqrt{rac{MSE}{n_1} + rac{MSE}{n_2}}$$
 
 This is similar to the independent groups t-test, however the numerators are using the *mean squared error from the ANOVA output* instead of the individual sample standard deviations.
 
@@ -187,7 +190,7 @@ Recall that the mean squared error is essentially the average within group varia
 **Degrees of freedom for multiple pairwise comparisons**
 
 $$df = df_{E}$$
-Instead of $min\left(n_1-1, n_2-1\right)$ in the independent means t-test, this is the degrees of freedom for the error in the ANOVA output.
+Instead of $min\left(n_1-1, n_2-1ight)$ in the independent means t-test, this is the degrees of freedom for the error in the ANOVA output.
 
 #### Example
 
@@ -198,9 +201,10 @@ Let's pick a pair and compare the means of lower and middle class vocabulary sco
 
 On to the hypothesis test:
 
-- $H_0: \mu_{middle} - \mu_{lower} = 0, H_A: \mu_{middle} - \mu_{lower} \neq 0$
+- $H_0: \mu_{middle} - \mu_{lower} = 0, H_A: \mu_{middle} - \mu_{lower} 
+eq 0$
 
-- $T = \frac{\left(\bar{x}_{middle} - \bar{x}_{lower}\right) - 0}{\sqrt{\frac{MSE}{n_{middle}} + \frac{MSE}{n_{lower}}}} = \frac{6.76 - 5.07}{\sqrt{\frac{3.628}{41} + \frac{3.628}{331}}} = 5.365$
+- $T = rac{\left(ar{x}_{middle} - ar{x}_{lower}ight) - 0}{\sqrt{rac{MSE}{n_{middle}} + rac{MSE}{n_{lower}}}} = rac{6.76 - 5.07}{\sqrt{rac{3.628}{41} + rac{3.628}{331}}} = 5.365$
 
 - $df = 791$ (from the table at the start of this article)
 
@@ -233,7 +237,7 @@ Once we have the bootstrap distribution, we can calculate confidence intervals i
 
 1. Percentile method: estimate a 95% (for example) confidence interval as the middle 95% of the distribution - the bounds of which would be the 2.5th and 97.5th percentiles of the bootstrap distribution.
 
-2. Standard error method (ostensibly more accurate): estimate the interval as $\text{sample statistic} \pm \space t^*_{df=n-1} \times SE_{boot}$, where $n$ is the original sample size.
+2. Standard error method (ostensibly more accurate): estimate the interval as $	ext{sample statistic} \pm \space t^*_{df=n-1} 	imes SE_{boot}$, where $n$ is the original sample size.
 
 **Example**
 
@@ -250,7 +254,7 @@ qt(0.05, 20 - 1, lower.tail = FALSE)
 
 Then, given that our sample median is 887, we get:
 
-$$\text{sample median} \pm t^*_{19} \times SE_{boot} = 887 \pm 1.73 \times 89.5758 = (732.1, 1041.9)$$
+$$	ext{sample median} \pm t^*_{19} 	imes SE_{boot} = 887 \pm 1.73 	imes 89.5758 = (732.1, 1041.9)$$
 
 We're 90% confident that the population median of rental prices in Durham falls between these bounds.
 

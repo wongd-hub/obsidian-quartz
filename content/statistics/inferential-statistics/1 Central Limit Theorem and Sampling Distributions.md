@@ -1,3 +1,6 @@
+---
+title: "1 Central Limit Theorem and Sampling Distributions"
+---
 #coursera-inferential-stats #statistics
 
 ## Table of contents
@@ -44,17 +47,17 @@ Each sample is it's own 'sample distribution', which is made up of randomly samp
 
 Imagine we want to find the mean height of all women in the U.S.; $N$ = population size
 
-- If we had the height of all women, we could simply calculate $\mu = \frac{x_1 + x_2 + \dots + x_n}{N}$. The standard deviation would then be $\sigma = \sqrt{\frac{\sum^N_{i=1}\left(x_i - \bar{x}\right)^2}{N}}$.
+- If we had the height of all women, we could simply calculate $\mu = rac{x_1 + x_2 + \dots + x_n}{N}$. The standard deviation would then be $\sigma = \sqrt{rac{\sum^N_{i=1}\left(x_i - ar{x}ight)^2}{N}}$.
 
 - Assuming we don't have this information, assume we sample 1,000 women from each state and calculate the mean from each sample
 
-- AL: $x_{AL,1} + x_{AL,2} + x_{AL,1000} \to \bar{x}_{AL}$
+- AL: $x_{AL,1} + x_{AL,2} + x_{AL,1000} 	o ar{x}_{AL}$
 
-- NC: $x_{NC,1} + x_{NC,2} + x_{NC,1000} \to \bar{x}_{NC}$, etc
+- NC: $x_{NC,1} + x_{NC,2} + x_{NC,1000} 	o ar{x}_{NC}$, etc
 
-- The mean of all $\bar{x}_{STATE}$ will be a close approximation to the population mean, $\mu$ ($mean(\bar{x}) \approx \mu$)
+- The mean of all $ar{x}_{STATE}$ will be a close approximation to the population mean, $\mu$ ($mean(ar{x}) pprox \mu$)
 
-- However $SD(\bar{x}) \lt \sigma$; we would expect the average height from each state to be pretty close to one another
+- However $SD(ar{x}) \lt \sigma$; we would expect the average height from each state to be pretty close to one another
 
 - The standard deviation of the sample means is called the *standard error*
 
@@ -73,7 +76,7 @@ See [here](https://gallery.shinyapps.io/CLT_mean/) for an interactive example of
 ### The Central Limit Theorem
 
 > [!info]+ Central Limit Theorem (CLT)
-> The distribution of sample statistics is nearly normal, centred at the population mean, and with a standard deviation equal to the population standard deviation divided by the square root of the sample size. i.e. $\bar{x} \sim N\left(mean = \mu, SE = \frac{\sigma}{\sqrt{n}}\right)$; where $\sigma$ is the population standard deviation, however we can use a sample standard deviation, $s$ instead.
+> The distribution of sample statistics is nearly normal, centred at the population mean, and with a standard deviation equal to the population standard deviation divided by the square root of the sample size. i.e. $ar{x} \sim N\left(mean = \mu, SE = rac{\sigma}{\sqrt{n}}ight)$; where $\sigma$ is the population standard deviation, however we can use a sample standard deviation, $s$ instead.
 
 > [!tip] Obsidian Callouts
 > **Note to self** - [more documentation on callouts in Obsidian](https://help.obsidian.md/Editing+and+formatting/Callouts)
@@ -144,17 +147,17 @@ I'm going on a 6 hour roadtrip, and I make a playlist of 100 songs. What is the 
 
 - We haven't worked with sums of probabilities yet, but this is equivalent to the average song being at least 3.6 minutes (360 minutes / 100 songs).
 
-- Given we're working with the sample mean ($\bar{x}$), we can use the Central Limit Theorem to figure out how the sample mean is distributed.
+- Given we're working with the sample mean ($ar{x}$), we can use the Central Limit Theorem to figure out how the sample mean is distributed.
 
-- The CLT says $\bar{x}$ will be distributed normally with mean equal to the population mean ($\mu =$ 3.45 minutes), and standard error equal to the population standard deviation divided by the square root of the sample size ($SE = \frac{\sigma}{\sqrt{n}} = \frac{1.63}{\sqrt{100}} = 0.163$); i.e. $\bar{x} \sim N\left(3.45, 0.165)\right)$
+- The CLT says $ar{x}$ will be distributed normally with mean equal to the population mean ($\mu =$ 3.45 minutes), and standard error equal to the population standard deviation divided by the square root of the sample size ($SE = rac{\sigma}{\sqrt{n}} = rac{1.63}{\sqrt{100}} = 0.163$); i.e. $ar{x} \sim N\left(3.45, 0.165)ight)$
 
-- Having all this information on how $\bar{x}$ is distributed should prompt you to draw a curve to properly visualise what's going on.
+- Having all this information on how $ar{x}$ is distributed should prompt you to draw a curve to properly visualise what's going on.
 
 - To calculate probabilities over a certain range of the distribution, we'll use a Z-score. Note we divide by the standard error - not the population standard deviation, since we're looking at the distribution of the mean song length; not looking at a single song.
   
-$$Z = \frac{\bar{x} - \mu}{SE} = \frac{3.6 - 3.45}{0.163} = 0.92$$
+$$Z = rac{ar{x} - \mu}{SE} = rac{3.6 - 3.45}{0.163} = 0.92$$
 
-- Using a standard normal distribution ($N\left(0, 1\right)$), we can find $P(Z > 0.92)$, which is 0.179. This is the probability that the playlist will last the entire roadtrip.
+- Using a standard normal distribution ($N\left(0, 1ight)$), we can find $P(Z > 0.92)$, which is 0.179. This is the probability that the playlist will last the entire roadtrip.
 
 ![[Pasted image 20230711154025.png]]
 

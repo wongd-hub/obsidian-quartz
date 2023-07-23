@@ -1,3 +1,6 @@
+---
+title: "7 Inference for Proportions"
+---
 #coursera-inferential-stats #statistics 
 
 ## Table of contents
@@ -26,7 +29,7 @@ This lesson begins by setting up the premise of sampling distributions just as t
 - Your sampling distribution will be made up of sample proportions; and,
 - Given the [[#Conditions for CLT for proportions|CLT for proportions assumptions]] are met, the sampling distribution for the proportion will be approximately normal:
 
-$$\hat{p} \sim N\left(\text{mean} = p, SE = \sqrt{\frac{p(1-p)}{n}}\right)$$
+$$\hat{p} \sim N\left(	ext{mean} = p, SE = \sqrt{rac{p(1-p)}{n}}ight)$$
 
 ### Conditions for CLT for proportions
 
@@ -64,17 +67,17 @@ We're told that 90% of all plant species are classified as angiosperms. If you w
 First we check assumptions:
 
 - Observations are randomly sampled, and 200 < 10% of the total population of all plants
-- $200 \times 0.9 \ge 10$ & $200 \times 0.1 \ge 10$
+- $200 	imes 0.9 \ge 10$ & $200 	imes 0.1 \ge 10$
 
 We know that:
 
 - $n = 200$
 - $p = 0.9$
-- Hence, $\hat{p} \sim N\left(0.9, \sqrt{\frac{0.9 \times 0.1}{200}} \approx 0.0212\right)$
+- Hence, $\hat{p} \sim N\left(0.9, \sqrt{rac{0.9 	imes 0.1}{200}} pprox 0.0212ight)$
 
 And we want to find $P(\hat{p} > 0.95)$.
 
-- The Z-score of 0.95 is $\frac{0.95 - 0.9}{0.0212} \approx 2.36$, which is a fairly high Z-score, and so…
+- The Z-score of 0.95 is $rac{0.95 - 0.9}{0.0212} pprox 2.36$, which is a fairly high Z-score, and so…
 
 ```r
 pnorm(2.36, lower.tail = FALSE)
@@ -96,14 +99,14 @@ Note that:
 Note also that this scenario meets the assumptions for CLT, with a randomly sampled sample that is less than 10% of all Americans, and with the number of successes (571) and failures (99) being &ge; 10.
 
 The formula for a confidence interval around a proportion estimate is:
-$$\text{proportion point estimate} \pm z^* \times SE_{\hat{p}} = \text{proportion point estimate} \pm z^* \times \sqrt{\frac{\hat{p}(1-\hat{p})}{n}} = 0.85 \pm 1.96\sqrt{\frac{0.85\times0.15}{670}} = (0.823, 0.877)$$
+$$	ext{proportion point estimate} \pm z^* 	imes SE_{\hat{p}} = 	ext{proportion point estimate} \pm z^* 	imes \sqrt{rac{\hat{p}(1-\hat{p})}{n}} = 0.85 \pm 1.96\sqrt{rac{0.85	imes0.15}{670}} = (0.823, 0.877)$$
 So we are 95% confident that 82.3% to 87.7% of all Americans have good intuition for experimental design.
 
 **Margin of Error Example**
 
 The margin of error for the previous example was 2.7%, say we want to decrease this to 1% while keeping the confidence level constant. How large of a sample will we need?
 
-$$ME = z^*SE_{\hat{p}} \Rightarrow 0.01 = 1.96\times\sqrt{\frac{0.85 \times 0.15}{n}} \Rightarrow n = 4898.04$$
+$$ME = z^*SE_{\hat{p}} \Rightarrow 0.01 = 1.96	imes\sqrt{rac{0.85 	imes 0.15}{n}} \Rightarrow n = 4898.04$$
 
 So we need at least `ceiling(4898.04) =` 4,899 people in our sample to get a 1% margin of error.
 
@@ -122,7 +125,7 @@ Recall that the steps to complete a hypothesis test are as follows:
 2. Calculate the point estimate: $\hat{p}$
 3. Check independence and sample size/skew conditions
 4. Draw sampling distribution, shade p-value, calculate the Z-score noting that $p$ will be the value in the null hypothesis
-5. Make a decision and interpret it in the context of your scenario - if p-value is &le; $\alpha$, then the data provides convincing evidence for $H_A$
+5. Make a decision and interpret it in the context of your scenario - if p-value is &le; $lpha$, then the data provides convincing evidence for $H_A$
 
 To clarify the usage of $p$ vs. $\hat{p}$; we use the sample proportion when there is nothing else known (i.e. in confidence intervals), but we use the hypothesised population proportion when doing hypothesis tests.
 
@@ -137,7 +140,7 @@ A 2013 Pew Research poll found that 60% of 1,983 randomly sampled American adult
 1. $H_0: p = 0.5$, $H_A: p > 0.5$
 2. $\hat{p} = 0.6$
 3. Sample is randomly picked and is smaller than 10% of the American adult population. Successes and failures are both &ge; 10. CLT assumptions are met.
-4. $Z = \frac{\hat{p} - p}{\sqrt{\frac{p(1-p)}{n}}} = \frac{0.6-0.5}{0.0122} \approx 8.92$, we know this is a high Z-score and hence will have a very small p-value.
+4. $Z = rac{\hat{p} - p}{\sqrt{rac{p(1-p)}{n}}} = rac{0.6-0.5}{0.0122} pprox 8.92$, we know this is a high Z-score and hence will have a very small p-value.
 
 ```r
 pnorm(8.92, lower.tail = FALSE)
@@ -183,8 +186,8 @@ Since these assumptions are mostly met, we can assume that the difference betwee
 
 The formula for estimating the confidence interval for a difference in proportions is as follows:
 
-$$\text{point estimate} \pm \text{margin of error} \Rightarrow \left(\hat{p}_1 - \hat{p}_2\right) \pm z^*SE_{\hat{p}_1 - \hat{p}_2}, \text{where } SE_{\hat{p}_1 - \hat{p}_2} = \sqrt{\frac{\hat{p}_1(1 - \hat{p}_1)}{n_1} + \frac{\hat{p}_2(1 - \hat{p}_2)}{n_2}}$$
-$$\therefore \left(\hat{p}_{Coursera} - \hat{p}_{US}\right) \pm z^*SE_{\hat{p}_{Coursera} - \hat{p}_{US}} \Rightarrow (0.71 - 0.25) \pm 1.96 \times \sqrt{\frac{0.71\times0.29}{83} + \frac{0.25\times0.75}{1028}} = (0.36, 0.56)$$
+$$	ext{point estimate} \pm 	ext{margin of error} \Rightarrow \left(\hat{p}_1 - \hat{p}_2ight) \pm z^*SE_{\hat{p}_1 - \hat{p}_2}, 	ext{where } SE_{\hat{p}_1 - \hat{p}_2} = \sqrt{rac{\hat{p}_1(1 - \hat{p}_1)}{n_1} + rac{\hat{p}_2(1 - \hat{p}_2)}{n_2}}$$
+$$	herefore \left(\hat{p}_{Coursera} - \hat{p}_{US}ight) \pm z^*SE_{\hat{p}_{Coursera} - \hat{p}_{US}} \Rightarrow (0.71 - 0.25) \pm 1.96 	imes \sqrt{rac{0.71	imes0.29}{83} + rac{0.25	imes0.75}{1028}} = (0.36, 0.56)$$
 
 Note that if we were asked to perform a hypothesis test on this same scenario, we would end up rejecting the null hypothesis (that posits there is no difference between the two proportions) since this confidence interval does not include 0.
 
@@ -192,7 +195,7 @@ Note that if we were asked to perform a hypothesis test on this same scenario, w
 
 What would happen if we switch the order of the Coursera proportion vs. the US proportion? Let's break down the confidence interval equation:
 
-- $\left(\hat{p}_1 - \hat{p}_2\right)$ can be either positive or negative
+- $\left(\hat{p}_1 - \hat{p}_2ight)$ can be either positive or negative
 - $z^*$ must always be positive
 - $SE_{\hat{p}_1 - \hat{p}_2}$ must always be positive - hence the margin of error will always be positive
 
@@ -211,7 +214,7 @@ Recall that for confidence intervals, we estimate bounds using the sample propor
 
 Hence, for our calculations when performing hypothesis tests on the difference between two proportions, we need to use the concept of a *pooled proportion*.
 
-$$H_0: p_1 = p_2 = ? \Rightarrow \hat{p}_{pool} = \frac{\text{total successes}}{\text{total n}} = \frac{\text{num of successes}_1 + \text{num of successes}_2}{n_1 + n_2}$$
+$$H_0: p_1 = p_2 = ? \Rightarrow \hat{p}_{pool} = rac{	ext{total successes}}{	ext{total n}} = rac{	ext{num of successes}_1 + 	ext{num of successes}_2}{n_1 + n_2}$$
 
 To recap, when working with two proportions:
 
@@ -236,7 +239,7 @@ The study results are as follows:
 
 So:
 
-- $\hat{p}_{pool} = \frac{34 + 61}{90 + 122} \approx 0.45$
+- $\hat{p}_{pool} = rac{34 + 61}{90 + 122} pprox 0.45$
 
 Checking assumptions before we dive into the hypothesis test
 
@@ -245,17 +248,18 @@ Checking assumptions before we dive into the hypothesis test
 	- Between groups: No reason to suspect that the samples are paired (only one partner can answer per parent pair)
 
 - Sample Size/Skew is met (note that we use pooled proportions here)
-	- Males: $90 \times 0.45 = 40.5$ & $90 \times 0.55 = 49.5$
-	- Females: $122 \times 0.45 = 54.9$ & $122 \times 0.55 = 67.1$
+	- Males: $90 	imes 0.45 = 40.5$ & $90 	imes 0.55 = 49.5$
+	- Females: $122 	imes 0.45 = 54.9$ & $122 	imes 0.55 = 67.1$
 
-Conditions for CLT are met, so $\left(\hat{p}_{male} - \hat{p}_{female}\right) \sim N\left(0, SE = \sqrt{\frac{0.45\times0.55}{90} + \frac{0.45\times0.55}{122}}\approx0.0691\right)$
+Conditions for CLT are met, so $\left(\hat{p}_{male} - \hat{p}_{female}ight) \sim N\left(0, SE = \sqrt{rac{0.45	imes0.55}{90} + rac{0.45	imes0.55}{122}}pprox0.0691ight)$
 
 We can now perform our hypothesis test
 
-1. $H_0: p_{male} - p_{female} = 0, H_A: p_{male} - p_{female} \neq 0$
+1. $H_0: p_{male} - p_{female} = 0, H_A: p_{male} - p_{female} 
+eq 0$
 2. $\hat{p}_{male} - \hat{p}_{female} = -0.12$
 3. As noted earlier, CLT assumptions are met
-4. $Z = \frac{\left(\hat{p}_{male} - \hat{p}_{female}\right) - 0}{SE_{\hat{p}_{male} - \hat{p}_{female}}} = \frac{-0.12 - 0}{0.0691} \approx -1.74$, and noting this is a two-tailed hypothesis test…
+4. $Z = rac{\left(\hat{p}_{male} - \hat{p}_{female}ight) - 0}{SE_{\hat{p}_{male} - \hat{p}_{female}}} = rac{-0.12 - 0}{0.0691} pprox -1.74$, and noting this is a two-tailed hypothesis test…
 
 ```r
 pnorm(-1.74) * 2
