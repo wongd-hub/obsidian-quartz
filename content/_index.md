@@ -1,5 +1,5 @@
 ---
-title: # A second 🧠
+title: A second 🧠
 enableToc: false
 ---
 
