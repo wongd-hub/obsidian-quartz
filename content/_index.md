@@ -1,7 +1,9 @@
 ---
-title: 🪴 Quartz 3.3
+title: # A second 🧠
 enableToc: false
 ---
+
+This is a second brain that contains notes on things we want to learn.
 
 Host your second brain and [digital garden](https://jzhao.xyz/posts/networked-thought) for free. Quartz features
 
