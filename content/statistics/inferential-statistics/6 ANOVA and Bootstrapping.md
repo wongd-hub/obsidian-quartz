@@ -1,15 +1,7 @@
 ---
 title: "6 ANOVA and Bootstrapping"
 ---
-#coursera-inferential-stats #statistics 
-
-## Table of contents
-
-1. [[#Comparing more than two means]]
-2. [[#ANOVA]]
-3. [[#Conditions for ANOVA]]
-4. [[#Multiple comparisons]]
-5. [[#Bootstrapping]]
+#coursera-inferential-stats #statistics
 
 ## Comparing more than two means
 
