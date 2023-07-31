@@ -1,7 +1,7 @@
 ---
 title: "3 Hypothesis Testing"
 ---
-#coursera-inferential-stats  #statistics
+#course_coursera-inferential-stats  #statistics
 
 ## Another Introduction to Inference
 

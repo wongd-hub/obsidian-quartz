@@ -1,7 +1,7 @@
 ---
 title: "5 t-distribution and Comparing Two Means"
 ---
-#coursera-inferential-stats #statistics 
+#course_coursera-inferential-stats #statistics 
 
 ## Inference for Numerical Variables
 

@@ -1,7 +1,7 @@
 ---
 title: "8 Simulation based inference for proportions and chi-square testing"
 ---
-#coursera-inferential-stats #statistics 
+#course_coursera-inferential-stats #statistics 
 
 ## Small sample proportions
 

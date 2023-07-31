@@ -1,7 +1,7 @@
 ---
 title: "2 Confidence Intervals"
 ---
-#coursera-inferential-stats #statistics 
+#course_coursera-inferential-stats #statistics 
 
 ## Introduction
 

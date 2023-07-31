@@ -1,4 +1,4 @@
 ---
 title: "1 Introduction"
 ---
-#codecademy-typescript
+#course_codecademy-typescript #typescript

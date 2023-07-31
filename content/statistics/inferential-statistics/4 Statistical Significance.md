@@ -1,7 +1,7 @@
 ---
 title: "4 Statistical Significance"
 ---
-#coursera-inferential-stats #statistics 
+#course_coursera-inferential-stats #statistics 
 
 ## Inference for Other Estimators
 
