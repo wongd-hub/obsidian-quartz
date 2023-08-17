@@ -1,6 +1,7 @@
 ---
 title: "2 Confidence Intervals"
 ---
+
 #course_coursera-inferential-stats #statistics 
 
 ## Introduction
@@ -11,15 +12,15 @@ A plausible range of values for the population parameter is called a confidence 
 
 - In other words, if we report a point estimate, we are less likely to have the correct population parameter. However, if we report a confidence interval, we have a good shot at capturing the population parameter.
 
-Based on one sample's mean, $ar{x}$, how do we figure out what the range of plausible values is going to be?
+Based on one sample's mean, $\bar{x}$, how do we figure out what the range of plausible values is going to be?
 
 - Our sample mean is indeed our best guess of what the population parameter is, so our interval will be centred around this value.
 
-- From the [[1 Central Limit Theorem and Sampling Distributions|CLT]], we know $ar{x}$ is distributed nearly normally, and the centre of the distribution is the unknown population mean.
+- From the [[1 Central Limit Theorem and Sampling Distributions|CLT]], we know $\bar{x}$ is distributed nearly normally, and the centre of the distribution is the unknown population mean.
 
 - The final thing to note here is the 68%, 95%, 99.7% rule. This tells us that roughly 95% of sample means will be within 2 standard deviations of the population mean. So for 95% of random samples, the true population is going to be within 2 standard errors of that sample's mean.
 
-- So a 95% confidence interval can be constructed as the sample mean plus or minus two standard errors; i.e. $ar{x} \pm 2SE$
+- So a 95% confidence interval can be constructed as the sample mean plus or minus two standard errors; i.e. $\bar{x} \pm 2SE$
 
 - What comes after the $\pm$ is referred to as the *Margin of Error* (ME).
 ![[Pasted image 20230711231359.png]]
@@ -36,15 +37,15 @@ One of the earliest examples of behavioral asymmetry is a preference in humans f
 
 4. The 99.7% CI for the percentage of kissers who turn their heads to the right is roughly $64.5\% \pm 12\%$.
 
-The false option is 3 - the correct margin of error for a 95% confidence interval is 2 $	imes$ SE, so 8%.
+The false option is 3 - the correct margin of error for a 95% confidence interval is 2 $\times$ SE, so 8%.
 
 ## Confidence interval (for a mean)
 
 More formally, the confidence interval for the population mean is the sample mean plus/minus the margin of error (which is the critical value corresponding to the middle x% of the normal distribution, multiplied against the standard error of the sampling distribution.)
 
-$$ar{x} \pm z^*rac{s}{\sqrt{n}}$$
+$$\bar{x} \pm z^*\frac{s}{\sqrt{n}}$$
 
-We mentioned before that the margin of error for a 95% confidence interval is 2 $	imes$ the standard error. This is actually not exact.
+We mentioned before that the margin of error for a 95% confidence interval is 2 $\times$ the standard error. This is actually not exact.
 
 - So how do we find the exact critical value we need?
 
@@ -79,7 +80,7 @@ The second condition is a little stricter than what we saw with the CLT as it im
 
 **Confidence levels**
 
-- Suppose we took many samples and built confidence intervals for each one using the equation $	ext{point estimate} \pm 1.96 	imes SE$.
+- Suppose we took many samples and built confidence intervals for each one using the equation $\text{point estimate} \pm 1.96 \times SE$.
 
 - Then 95% of these confidence intervals will contain the true population mean, $\mu$.
 
@@ -93,7 +94,7 @@ Changing the confidence level simply means adjusting the critical value aspect o
 
 - In other words, increasing our accuracy by increasing our confidence level will also decrease our precision.
 
-- For example, say the weather forecast predicts that the temperature tomorrow will be between $-20^	ext{o}C$ and $100^	ext{o}C$. Is this accurate? Yes, because it's likely to contain the true temperature for tomorrow. However, is it precise or in any way informative? No.
+- For example, say the weather forecast predicts that the temperature tomorrow will be between $-20^\text{o}C$ and $100^\text{o}C$. Is this accurate? Yes, because it's likely to contain the true temperature for tomorrow. However, is it precise or in any way informative? No.
 
 Is it possible to increase both accuracy and precision without making trade-offs? Yes - the answer is to increase sample size, which shrinks our standard error and therefore our margin of error.
 
@@ -125,7 +126,7 @@ What would we need n to be to achieve a given ME?
 
 - We do this by re-arranging the ME equation:
 
-$$ME = z^*rac{s}{\sqrt{n}} 	o n = \left(rac{z^*s}{ME}ight)^2$$
+$$ME = z^*\frac{s}{\sqrt{n}} \to n = \left(\frac{z^*s}{ME}\right)^2$$
 
 We can see from this that as sample size increases, ME will decrease.
 

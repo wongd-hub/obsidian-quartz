@@ -1,6 +1,7 @@
 ---
 title: "3 Hypothesis Testing"
 ---
+
 #course_coursera-inferential-stats  #statistics
 
 ## Another Introduction to Inference
@@ -51,8 +52,7 @@ So to conduct this hypothesis test we:
 
 - $H_0$: Often a skeptical perspective or a claim to be tested. Generally set the parameter of interest equal to same value.
 
-- $H_A$: An alternative claim under consideration, represented by a range of possible values (<, >, $
-eq$)
+- $H_A$: An alternative claim under consideration, represented by a range of possible values (<, >, $\neq$)
 
 The skeptic will not abandon $H_0$ unless the evidence in favour of $H_A$ is so strong that they reject $H_0$ in favour of $H_A$.
 
@@ -68,17 +68,17 @@ This is a quick and dirty approach to hypothesis testing; but doing it this way 
 
 ### p-value
 
-The p-value is defined as: $P\left(	ext{observed or more extreme outcome}|H_0	ext{ is true}ight)$
+The p-value is defined as: $P\left(\text{observed or more extreme outcome}|H_0\text{ is true}\right)$
 
 In the context of the example above, if we queried a sample of 50 students and got a mean of 3.2; and we find that the sample standard deviation is 1.74:
 
-$$n = 50; ar{x} = 3.2; s = 174 	o SE = 0.246$$
+$$n = 50; \bar{x} = 3.2; s = 174 \to SE = 0.246$$
 
-1. Our p-value is then defined as $P\left(ar{x} > 3.2 | H_0: \mu = 3ight)$
+1. Our p-value is then defined as $P\left(\bar{x} > 3.2 | H_0: \mu = 3\right)$
 
-2. Since we're assuming the null hypothesis to be true, we can construct the sampling distribution based on the CLT: $ar{x} \sim N\left(\mu = 3, SE = 0.246ight)$
+2. Since we're assuming the null hypothesis to be true, we can construct the sampling distribution based on the CLT: $\bar{x} \sim N\left(\mu = 3, SE = 0.246\right)$
 
-3. The z-score for a sample mean of 3.2 is then $Z = rac{3.2 - 3}{0.246} = 0.81$ (this is also called a test statistic since we're going to be using it to calculate our p-value)
+3. The z-score for a sample mean of 3.2 is then $Z = \frac{3.2 - 3}{0.246} = 0.81$ (this is also called a test statistic since we're going to be using it to calculate our p-value)
 
 4. The p-value is then equal to $P(Z > 0.81) = 0.209$ (`pnorm` gives the area under the Cumulative Distribution Function to the left of the entered z-score)
 
@@ -93,7 +93,7 @@ If the population mean of exclusive relationships in college students is truly 3
 
 We just used the z-score to calculate the p-value, which is the probability of observing data at least as favourable to the alternative hypothesis as our current dataset - given that the null hypothesis is true.
 
-- If the p-value is low (lower than the *significance level*, $lpha$) we say that it would be very unlikely to observe the data if the null hypothesis were true, and therefore reject $H_0$.
+- If the p-value is low (lower than the *significance level*, $\alpha$) we say that it would be very unlikely to observe the data if the null hypothesis were true, and therefore reject $H_0$.
 
 - If the p-value is high, then it is very likely to observe the data we currently have given that the null hypothesis were true, and we do not reject $H_0$.
 
@@ -105,7 +105,7 @@ Often, instead of looking for divergence from the null hypothesis in a specific 
 
 The definition of the p-value is the same across oneand two-tailed tests; however the calculation is slightly different since we need to consider extremity on two sides of the distribution.
 
-In the context of our previous example, the p-value would instead be equal to $P\left(ar{x} > 3.2 	ext{ OR } ar{x} < 2.8| H_0: \mu = 3ight) = P(Z > 0.81) + P(Z < -0.81) = 0.209 	imes 2 = 0.418$
+In the context of our previous example, the p-value would instead be equal to $P\left(\bar{x} > 3.2 \text{ OR } \bar{x} < 2.8| H_0: \mu = 3\right) = P(Z > 0.81) + P(Z < -0.81) = 0.209 \times 2 = 0.418$
 
 ### Recap
 
@@ -123,12 +123,11 @@ Researchers investigating characteristics of gifted children collected data from
 
 We're asked to perform a hypothesis test to evaluate if these data provide convincing evidence of a difference between the average IQ score of mothers of gifted children and the average IQ score for the population at large, which happens to be 100. We're also asked to use a significance level of 0.01.
 
-Our parameter of interest is the mean here, so we set $\mu = 	ext{average IQ score for mothers of gifted children}$.
+Our parameter of interest is the mean here, so we set $\mu = \text{average IQ score for mothers of gifted children}$.
 
-1. Set the hypotheses: Our null hypothesis is that $H_0: \mu = 100$; and our alternative is $H_A: \mu 
-eq 100$
+1. Set the hypotheses: Our null hypothesis is that $H_0: \mu = 100$; and our alternative is $H_A: \mu \neq 100$
 
-2. Calculate the point estimate: This is given to us as our sample mean ($ar{x} = 118.2$)
+2. Calculate the point estimate: This is given to us as our sample mean ($\bar{x} = 118.2$)
 
 3. Check the conditions:
 
@@ -136,11 +135,11 @@ eq 100$
 
 - We know that the sample size is &ge; 30, and the sample distribution appears non-skewed so we can expect a normally distributed sampling distribution
 
-- Knowing this, we can assert that, if the null hypothesis is true, then $ar{x} \sim N\left(100, rac{6.5}{\sqrt{36}} pprox 1.083ight)$
+- Knowing this, we can assert that, if the null hypothesis is true, then $\bar{x} \sim N\left(100, \frac{6.5}{\sqrt{36}} \approx 1.083\right)$
 
 1. Calculate the test statistic:
 
-$$Z = rac{118.2 - 100}{1.083} = 16.8 	o P(Z > 16.8) + P(Z < -16.8) pprox 0$$
+$$Z = \frac{118.2 - 100}{1.083} = 16.8 \to P(Z > 16.8) + P(Z < -16.8) \approx 0$$
 
 1. Make a decision and interpret in context of the research question
 
@@ -150,18 +149,17 @@ The smaller the p-value, the stronger the evidence is against the null hypothesi
 
 A statistics student interested in sleep habits of domestic cats took a random sample of 144 cats and monitored their sleep. The cats slept an average of 16 hours per day. According to our online resources, domestic dogs actually sleep on average 14 hours a day. We want to find out if these data provide convincing evidence of different sleeping habits for domestic cats and dogs with respect to how much they sleep. Note that the test statistic calculated was 1.73.
 
-We're told that our sample mean is 16 hours, and that dogs sleep 14 hours per day. For us, $\mu = 	ext{average hours cats sleep}$, and from the sample, $ar{x} = 16$.
+We're told that our sample mean is 16 hours, and that dogs sleep 14 hours per day. For us, $\mu = \text{average hours cats sleep}$, and from the sample, $\bar{x} = 16$.
 
-1. Set the hypothesis: $H_0: \mu = 14$; $H_A: \mu 
-eq 14$
+1. Set the hypothesis: $H_0: \mu = 14$; $H_A: \mu \neq 14$
 
-2. Calculate the point estimate: $ar{x} = 16$
+2. Calculate the point estimate: $\bar{x} = 16$
 
 3. Check the conditions: Here we assume the conditions are okay, or have already been checked
 
 4. Calculate the test statistic:
 
-$$Z = rac{16 - 14}{rac{s}{\sqrt{144}}} = 1.73 	o P(Z > 1.73) + P(Z < -1.73) = 0.0836$$
+$$Z = \frac{16 - 14}{\frac{s}{\sqrt{144}}} = 1.73 \to P(Z > 1.73) + P(Z < -1.73) = 0.0836$$
 
 ```r
 pnorm(-1.73) * 2
