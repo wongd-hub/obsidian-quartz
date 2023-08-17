@@ -1,7 +1,6 @@
 ---
 title: "1 RL Introduction to Reinforcement Learning"
 ---
-
 #course_google-deepmind-reinforcement-learning #reinforcement-learning
 ## About reinforcement learning
 
@@ -76,7 +75,7 @@ $$H_T = A_1, O_1, R_1, \dots, A_t, O_t, R_t$$
 ### State
 
 - *State* is a summary of the information that's used to determine what happens next. We replace the history with some concise summary with all the info we need to act. Formally, it is a function of the history:
-$$S_t=f\left(H_t\right)$$
+$$S_t=f\left(H_tight)$$
 - There are three definitions of state; what do they mean and how do they relate to each other?
 
     - The *environment* state ($S_t^e$); this is the information that's used in the environment to determine what happens next, i.e. the next observation/reward. 
@@ -86,7 +85,7 @@ $$S_t=f\left(H_t\right)$$
 
     - The *agent* state ($S_t^a$) captures what's happened to the agent so far, summarises it all into useful information, and it uses these numbers to pick the next action.
         - Our decision is how to process those observations and what to remember/throw away.
-        - It is the information used by the RL algorithm and can be any function of the history $S_t^a=\left(H_t\right)$.
+        - It is the information used by the RL algorithm and can be any function of the history $S_t^a=\left(H_tight)$.
 
     - The *information* state (a.k.a. *Markov* state - a concept from information theory) contains all useful information from history.
         - By definition, the environment state is Markov. $S_t^e$ at any given moment is Markov since that's what its using to pick the next observation it will emit and the reward.
@@ -99,7 +98,7 @@ $$S_t=f\left(H_t\right)$$
 > In other words, the probability of the next state given the state you're in is the same as if you showed all of the previous states to the system.
 > 
 > i.e. This is a *memoryless* system. The current state fully characterises the distribution of over future actions/observations/rewards.
-> $$H_{1:t} \rightarrow S_t \rightarrow H_{t+1:\infty}$$
+> $$H_{1:t} ightarrow S_t ightarrow H_{t+1:\infty}$$
 
 > [!tip] Example: Helicopter manoeuvres
 > For the helicopter, its current velocity, orientation, wind speed, etc. may form a rough Markov state for the agent. When it knows this, it doesn't matter where it was before this, from this it knows where it will be in the next moment.
@@ -137,7 +136,7 @@ So far we've only talked about the problem, not yet how to solve the problem.
 
     - **Value function**: how good is each state and/or action. How much reward do I expect to get if we take this action in this particular state.
         - A prediction of expected future reward. This is how we choose between action 1 and action 2.
-        - Since the value will depend on what your action/policy is, we index by $\pi$: $v_\pi(s)=\mathbb{E}_\pi\left[R_t+\gamma R_{t+1} + \gamma^2 R_{t+2} + \dots|S_t=s\right]$
+        - Since the value will depend on what your action/policy is, we index by $\pi$: $v_\pi(s)=\mathbb{E}_\pi\left[R_t+\gamma R_{t+1} + \gamma^2 R_{t+2} + \dots|S_t=sight]$
             - i.e. The value function tells us how much total reward we expect going into the future. We can also have discounting ($\gamma$) that goes into the future which helps us care more about immediate rewards if we want.
 
     - **Model**: agent's subjective representation of the how the environment works. Its sometimes useful to learn the behaviour of the environment and use that model of the environment to help figure out what to do next.
