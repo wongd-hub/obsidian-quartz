@@ -100,6 +100,8 @@ $$S_t=f\left(H_tight)$$
 > i.e. This is a *memoryless* system. The current state fully characterises the distribution of over future actions/observations/rewards.
 > $$H_{1:t} ightarrow S_t ightarrow H_{t+1:\infty}$$
 
+^c3f6cb
+
 > [!tip] Example: Helicopter manoeuvres
 > For the helicopter, its current velocity, orientation, wind speed, etc. may form a rough Markov state for the agent. When it knows this, it doesn't matter where it was before this, from this it knows where it will be in the next moment.
 > 

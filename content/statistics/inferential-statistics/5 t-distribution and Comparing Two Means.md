@@ -1,9 +1,7 @@
 ---
 title: "5 t-distribution and Comparing Two Means"
 ---
-
 #course_coursera-inferential-stats #statistics 
-
 ## Inference for Numerical Variables
 
 We'll build upon the tools we've used to perform inference on numerical variables in this unit. We'll be looking at:
@@ -23,7 +21,7 @@ The t-distribution will be useful for describing the distribution of the sample 
 - What purpose does a large sample serve? As long as your observations are independent, and the population distribution is not extremely skewed, a large sample will ensure that:
 	- The sampling distribution of the mean is nearly normal; and,
 	- The estimate of the standard error is reliable.
-		- Recall that $SE = \frac{s}{\sqrt{n}}$, where $s$ is the standard deviation of our sample which is our best estimate of the unknown population standard deviation. If our sample is large enough, it'll be more likely that $s$ is a good estimate of the population standard deviation, and therefore the standard error estimation is reliable.
+		- Recall that $SE = rac{s}{\sqrt{n}}$, where $s$ is the standard deviation of our sample which is our best estimate of the unknown population standard deviation. If our sample is large enough, it'll be more likely that $s$ is a good estimate of the population standard deviation, and therefore the standard error estimation is reliable.
 
 What if your sample size is small?
 
@@ -52,7 +50,7 @@ How do we actually use the t-distribution in statistical inference?
 
 - Use the t-distribution on a single mean, or for comparing two means, when the population standard deviation is unknown (almost always).
 
-- Calculate the T-statistic just as you would a Z-score: $T = \frac{\text{obs} - \text{null}}{SE}$, then find the corresponding p-value from the t-distribution
+- Calculate the T-statistic just as you would a Z-score: $T = rac{	ext{obs} - 	ext{null}}{SE}$, then find the corresponding p-value from the t-distribution
 
 #### Examples
 
@@ -105,7 +103,7 @@ Results are as follows. The goal for this video is to estimate average snacking 
 Let's aim to estimate the mean biscuit intake of the sample who played video games.
 
 - To estimate the mean, we'll create a confidence interval. For t-distributions, the calculation of the standard error is the same as the normal distribution, so the only thing that changes in our CI formula is the critical value:
-$$\text{point estimate} \pm t_{df}^* \times \frac{s}{\sqrt{n}}$$
+$$	ext{point estimate} \pm t_{df}^* 	imes rac{s}{\sqrt{n}}$$
 
 - When working with data from one sample, and working with one single mean,
 $$df = n - 1$$
@@ -121,7 +119,7 @@ qt(0.025, df = 22 - 1) # since the sample size was 22
 
 We now have our mean, sample standard deviation, sample size, and critical t-statistic. Our confidence interval is then:
 
-$$52.1 \pm 2.08 \times \frac{45.1}{\sqrt{22}} = \left(32.1, 72.1\right)$$
+$$52.1 \pm 2.08 	imes rac{45.1}{\sqrt{22}} = \left(32.1, 72.1ight)$$
 
 Therefore, we are 95% confident that distracted eaters consume between 32.1g and 72.1g of snacks post-meal.
 
@@ -129,8 +127,9 @@ Therefore, we are 95% confident that distracted eaters consume between 32.1g and
 
 Next, consider that the suggested serving size of biscuits is 30g; do these data suggest that there is a statistically significant difference between the suggested serving size and the amount that distracted eaters eat?
 
-- $H_0: \mu = 30, H_A: \mu \neq 30$
-- $T = \frac{52.1 - 30}{9.62} = 2.3$
+- $H_0: \mu = 30, H_A: \mu 
+eq 30$
+- $T = rac{52.1 - 30}{9.62} = 2.3$
 - $df = 22 - 1$
 
 ```r
@@ -155,7 +154,7 @@ Looping back around to check that the conditions are met:
 
 To produce confidence intervals for the difference between two means, we do the following:
 
-$$\left(\bar{x}_1 - \bar{x}_2\right) \pm t^*_{df}\times\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}$$
+$$\left(ar{x}_1 - ar{x}_2ight) \pm t^*_{df}	imes\sqrt{rac{s_1^2}{n_1} + rac{s_2^2}{n_2}}$$
 
 Note that we add the two variances even though we're looking for the standard error of the difference between the two means. Conceptually, this is bringing together two measures with an inherent variability around them. When you bring two unknowns together, the result should always be more variable (regardless of if you're adding or subtracting them).
 
@@ -178,7 +177,7 @@ This is a conservative (since it relies on the lower df) estimate, because the e
 
 Coming back to our example,
 
-$$\left(\bar{x}_{wd} - \bar{x}_{wod}\right) \pm t^*_{df}\times\sqrt{\frac{s_{wd}^2}{n_{wd}} + \frac{s_{wod}^2}{n_{wod}}} = \left(52.1 - 27.1\right) \pm 2.08 \times \sqrt{\frac{45.1^2}{22} + \frac{26.4^2}{22}} = \left(1.83, 48.17\right)$$
+$$\left(ar{x}_{wd} - ar{x}_{wod}ight) \pm t^*_{df}	imes\sqrt{rac{s_{wd}^2}{n_{wd}} + rac{s_{wod}^2}{n_{wod}}} = \left(52.1 - 27.1ight) \pm 2.08 	imes \sqrt{rac{45.1^2}{22} + rac{26.4^2}{22}} = \left(1.83, 48.17ight)$$
 
 So we are 95% confident that those who eat with distractions consume 1.83 g and 48.17 g *more* snacks than those who eat without distractions, on average.
 
@@ -186,9 +185,10 @@ So we are 95% confident that those who eat with distractions consume 1.83 g and 
 
 Do these data provide convincing evidence of a difference in post-meal consumption between the two groups?
 
-- $H_0: \mu_{wd} - \mu_{wod} = 0, H_A: \mu_{wd} - \mu_{wod} \neq 0$
+- $H_0: \mu_{wd} - \mu_{wod} = 0, H_A: \mu_{wd} - \mu_{wod} 
+eq 0$
 
-- $T_{21} = \frac{25 - 0}{11.24} = 2.24$; 25 is the difference between the two means, and 11.24 is the previously calculated SE
+- $T_{21} = rac{25 - 0}{11.24} = 2.24$; 25 is the difference between the two means, and 11.24 is the previously calculated SE
 
 - The corresponding p-value is:
 
@@ -215,13 +215,14 @@ Can a student's reading and writing score be assumed independent of one another?
 
 Here, the parameter of interest is $\mu_{diff}$, the average difference between the reading and writing scores of *all* high school students.
 
-- Since we don't have this, we'll estimate the average difference between the reading and writing scores of the sampled high school students: $\bar{x}_{diff}$
+- Since we don't have this, we'll estimate the average difference between the reading and writing scores of the sampled high school students: $ar{x}_{diff}$
 
 For the hypothesis test - we're now doing a hypothesis test on a *single* population mean:
 
-- $H_0: \mu_{diff} = 0, H_A: \mu_{diff} \neq 0$
-- We're also told the following: $\bar{x}_{diff} = -0.545, s_{diff} = 8.887, n_{diff} = 200$
-- So $T = \frac{-0.545 - 0}{\frac{8.887}{\sqrt{200}}} = -0.87$; $df = 200 - 1 = 199$
+- $H_0: \mu_{diff} = 0, H_A: \mu_{diff} 
+eq 0$
+- We're also told the following: $ar{x}_{diff} = -0.545, s_{diff} = 8.887, n_{diff} = 200$
+- So $T = rac{-0.545 - 0}{rac{8.887}{\sqrt{200}}} = -0.87$; $df = 200 - 1 = 199$
 
 ```r
 pt(-0.87, 199) * 2
@@ -232,7 +233,7 @@ So the probability is 38.5% to obtain a random sample of 200 students where the 
 
 ## Power
 
-Recall that the power of the test is the probability of correctly rejecting $H_0$ when it is indeed false. Recall also that there is a trade-off between $\alpha$ (the probability of committing a Type I error) and $\beta$ (probability of Type II error), and that one way to decrease both is by raising the sample size.
+Recall that the power of the test is the probability of correctly rejecting $H_0$ when it is indeed false. Recall also that there is a trade-off between $lpha$ (the probability of committing a Type I error) and $eta$ (probability of Type II error), and that one way to decrease both is by raising the sample size.
 
 Two competing considerations when designing experiments:
 
@@ -246,7 +247,8 @@ In this lecture, we'll look at the example of designing a medicine study so that
 Suppose a pharmaceutical company has developed a new drug for lowering blood pressure and they are preparing a clinical trial to test the drug's effectiveness. They recruit people who are taking a particular standard blood pressure medication, and half of the subjects are given the new drug, this is the treatment group. And the other half continued to take their medication through generic-looking pills to ensure blinding, this is our control group. What are the hypotheses for a two-sided hypothesis test in this context?
 
 - $\mu$ will be the average blood pressure in any one of our groups.
-	- $H_0: \mu_{treatment} - \mu_{control} = 0, H_A: \mu_{treatment} - \mu_{control} \neq 0$
+	- $H_0: \mu_{treatment} - \mu_{control} = 0, H_A: \mu_{treatment} - \mu_{control} 
+eq 0$
 
 Suppose researchers would like to run this clinical trial on patients with systolic blood pressures between 140 and 180 millimeter of mercury. Suppose previously published studies suggest that the standard deviation of the patients' blood pressures will be about 12 millimeters of mercury and that the distribution of patients' blood pressures will be approximately symmetric.
 
@@ -254,7 +256,7 @@ If we had 100 patients per group, what would be the approximate standard error f
 
 - This is a test of difference between two independent groups, therefore the standard error is defined as:
 
-$$SE = \sqrt{\frac{12^2}{100} + \frac{12^2}{100}} = 1.70 mmHg$$
+$$SE = \sqrt{rac{12^2}{100} + rac{12^2}{100}} = 1.70 mmHg$$
 
 For what values of the difference between the observed average of blood pressure in treatment and control groups would we reject the null hypothesis at the 5% level?
 
@@ -280,7 +282,7 @@ Suppose that the company researchers care about finding any effect on blood pres
 	- We also know that we will reject the null hypothesis if the difference were at least -3.33
 
 We have enough information to calculate the probability now: 
-$$Z = \frac{-3.33 - (-3)}{1.70} = -0.20 \to P(Z < -0.20) = \dots$$
+$$Z = rac{-3.33 - (-3)}{1.70} = -0.20 	o P(Z < -0.20) = \dots$$
 
 ```r
 pnorm(-0.20)
