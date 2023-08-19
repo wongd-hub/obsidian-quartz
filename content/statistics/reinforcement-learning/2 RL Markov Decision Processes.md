@@ -91,3 +91,7 @@ We can now keep sampling from this matrix to move through states.
 > The *state value function* $v(s)$ of an MRP is the expected return starting from state $s$
 > $$v(s)=\mathbb{E}[G_t|S_t=s]$$
 > This has to be an expectation because the environment we're in (a Markov process) is stochastic.
+
+> [!tip] Example: Student Markov Chain returns
+> ![[Pasted image 20230819230607.png]]
+> This is the return starting at time step 1. How would we find the value (i.e. the expected return from time step 1 onwards)? We could take a bunch of samples starting in the first state and average out all possible returns
