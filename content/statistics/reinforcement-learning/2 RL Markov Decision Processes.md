@@ -82,7 +82,7 @@ We can now keep sampling from this matrix to move through states.
 > - $\gamma = 0$ means you care only about immediate returns
 > - $\gamma = 1$ means you care about future returns equally as much as present returns
 
-## Value function
+### Value function
 
 - This is the central quantity we're interested in and is the total reward that you expect to get from a given state onwards.
     - In other words, $v(s)$ gives the long-term value of state $s$
@@ -104,7 +104,7 @@ We can now keep sampling from this matrix to move through states.
 > 
 > ![[Pasted image 20230819233526.png]]
 
-## Bellman equation for MRPs
+### Bellman expectation equation for MRPs
 
 This is a fundamental relationship in RL
 
