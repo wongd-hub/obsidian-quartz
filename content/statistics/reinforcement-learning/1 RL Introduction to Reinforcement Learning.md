@@ -2,6 +2,8 @@
 title: "1 RL Introduction to Reinforcement Learning"
 ---
 #course_google-deepmind-reinforcement-learning #reinforcement-learning
+
+[Slide link](https://www.davidsilver.uk/wp-content/uploads/2020/03/intro_RL.pdf)
 ## About reinforcement learning
 
 ![[Pasted image 20230816152354.png]]

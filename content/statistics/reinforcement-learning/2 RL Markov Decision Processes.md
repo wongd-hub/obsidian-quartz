@@ -2,6 +2,8 @@
 title: "2 RL Markov Decision Processes"
 ---
 #course_google-deepmind-reinforcement-learning #reinforcement-learning 
+
+[Slide link](https://www.davidsilver.uk/wp-content/uploads/2020/03/MDP.pdf)
 ## Markov processes
 
 - *Markov decision processes* (MDPs) formally describe an environment for machine learning
