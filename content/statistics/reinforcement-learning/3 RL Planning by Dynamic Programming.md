@@ -30,7 +30,7 @@ title: "3 RL Planning by Dynamic Programming"
 
 This is a general solution method for problems that have two properties:
 
-- **Optimal substructure** - i.e. the principle of optimality applies - the optimal solution can be decomposed into subproblems
+- **Optimal substructure** - i.e. the principle of optimality applies - the optimal solution can be decomposed into subproblems ^3a68c9
     - This means that you can solve some overall problem by breaking it down into pieces, and the optimal solution to those pieces tells you how to get the optimal solution to your overall problem.
     - If this didn't apply, it would be fruitless to solve your subproblems since they won't take you any closer to solving the overall problem.
     - An example is the shortest path problem. The shortest path between you and some point X can be broken down into the shortest path between you and some closer point Y, then the shortest path between Y and X.
