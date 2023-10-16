@@ -18,7 +18,7 @@ title: "4 DK Running Docker Containers"
 
 | Command                       | Usage                                                        |
 | ----------------------------- | ------------------------------------------------------------ |
-| `docker run  <image-name>`    | Run a Docker image                                           |
+| `docker run <image-name>`    | Run a Docker image                                           |
 | `docker run -it <image-name>` | Run a Docker image and gain access to an interactive shell   |
 | `docker run -d <image-name>`  | Run a Docker image in the background with no printed outputs |
 | `docker ps`                   | List all running Docker containers                           |
