@@ -1,5 +1,5 @@
 ---
-title: "7 DK Distributing Docker Images"
+title: "07 DK Distributing Docker Images"
 ---
 #course_datacamp-docker #docker 
 
