@@ -71,7 +71,7 @@ printf("hello %s
 ", answer);
 ```
 
-- `s` stands for string. There is also `%c`, `%f`, 
+- `s` stands for string. There is also `%c`, `%f`, `%i`, `%li`, etc.
 
 ## Syntactic sugar
 
