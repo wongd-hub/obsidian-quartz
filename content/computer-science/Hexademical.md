@@ -6,9 +6,12 @@ title: "Hexademical"
 - We've already seen [[RGB]] as a way to represent colours; however there's a standard notation for representing this information.
 - We use hexadecimal (i.e. base-16) for this.
 
+> [!info]
+> Often we prefix hexadecimal numbers with `#` for colour codes and `0x` for most other purposes such as [[Memory#Memory addresses|memory addresses]].
+
 # The base-16 system
 
-- In computers, we can represent the numbers from 10-15 using the first 6 letters of the alphabet.
+- In computers, we can represent the numbers from 10-15 using the first 6 letters of the alphabet. Note either upper- or lower-case is fine - this system is not case sensitive.
 
 ```
 0 1 2 3 4 5 6 7 8 9 A B C D E F
@@ -34,5 +37,3 @@ e.g.
 
 #FF0000 255 Red, 0 Green, 0 Blue
 ```
-
-- Often we prefix hexadecimal numbers with `#` for colour codes and `0x` for most other purposes such as memory addresses.
