@@ -1,5 +1,5 @@
 ---
-title: "Hexademical"
+title: "Hexadecimal"
 ---
 #course_cs50 
 

@@ -39,6 +39,12 @@ CS50 is Harvard University's introductory course in computer science and program
     - [[Recursion]]
 
 - Week 4: Memory
-    - [[Hexademical]] 
+    - [[Hexadecimal]] 
     - [[Memory#Memory addresses]]
     - [[Strings]]
+    - [[Pointer Arithmetic]]
+    - [[Memory#Copying]]
+    - [[NULL]]
+    - [[Debugging Memory Issues - malloc() and Valgrind]]
+    - [[Garbage Values]]
+    - [[Swapping]]
