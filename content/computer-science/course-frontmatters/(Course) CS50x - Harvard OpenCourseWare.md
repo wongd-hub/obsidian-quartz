@@ -24,6 +24,7 @@ CS50 is Harvard University's introductory course in computer science and program
     - [[Unix Time]]
 
 - Week 2: Arrays
+    - [[Arrays]]
     - [[Compiler]]
     - [[Debugging]]
     - [[Memory]]
@@ -53,4 +54,6 @@ CS50 is Harvard University's introductory course in computer science and program
     - [[Bitmap]]
 
 - Week 5: Data Structures
-    - [[Stacks and Queues]]
+    - [[Abstract Data Types]]
+    - [[Arrays#Resizing arrays]]
+    - [[Linked Lists]]
