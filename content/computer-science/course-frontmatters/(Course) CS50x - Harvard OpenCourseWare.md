@@ -58,3 +58,4 @@ CS50 is Harvard University's introductory course in computer science and program
     - [[Arrays#Resizing arrays]]
     - [[Linked Lists]]
     - [[Trees]]
+    - [[Dictionaries]]
