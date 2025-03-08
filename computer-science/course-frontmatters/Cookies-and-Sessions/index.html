@@ -1,4 +1,7 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=description content="#course_cs50"><meta property="og:title" content="Cookies and Sessions"><meta property="og:description" content="#course_cs50"><meta property="og:type" content="website"><meta property="og:image" content="https://wongd-hub.github.io/obsidian-quartz/icon.png"><meta property="og:url" content="https://wongd-hub.github.io/obsidian-quartz/computer-science/course-frontmatters/Cookies-and-Sessions/"><meta property="og:width" content="200"><meta property="og:height" content="200"><meta name=twitter:card content="summary"><meta name=twitter:title content="Cookies and Sessions"><meta name=twitter:description content="#course_cs50"><meta name=twitter:image content="https://wongd-hub.github.io/obsidian-quartz/icon.png"><title>Cookies and Sessions</title><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" type=image/png href=https://wongd-hub.github.io/obsidian-quartz//icon.png><link href=https://wongd-hub.github.io/obsidian-quartz/styles.19109a40042e9f0e72e952fda4442a34.min.css rel=stylesheet><link href=https://wongd-hub.github.io/obsidian-quartz/styles/_light_syntax.86a48a52faebeaaf42158b72922b1c90.min.css rel=stylesheet id=theme-link><script src=https://wongd-hub.github.io/obsidian-quartz/js/darkmode.df266a900377a99b203da11b154c20ec.min.js></script>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=description content="#course_cs50
+ This is how websites are able to remember that you logged in already or your preferences persistently. In other words, cookies allow the website to be stateful - and remember something about you."><meta property="og:title" content="Cookies and Sessions"><meta property="og:description" content="#course_cs50
+ This is how websites are able to remember that you logged in already or your preferences persistently. In other words, cookies allow the website to be stateful - and remember something about you."><meta property="og:type" content="website"><meta property="og:image" content="https://wongd-hub.github.io/obsidian-quartz/icon.png"><meta property="og:url" content="https://wongd-hub.github.io/obsidian-quartz/computer-science/course-frontmatters/Cookies-and-Sessions/"><meta property="og:width" content="200"><meta property="og:height" content="200"><meta name=twitter:card content="summary"><meta name=twitter:title content="Cookies and Sessions"><meta name=twitter:description content="#course_cs50
+ This is how websites are able to remember that you logged in already or your preferences persistently. In other words, cookies allow the website to be stateful - and remember something about you."><meta name=twitter:image content="https://wongd-hub.github.io/obsidian-quartz/icon.png"><title>Cookies and Sessions</title><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" type=image/png href=https://wongd-hub.github.io/obsidian-quartz//icon.png><link href=https://wongd-hub.github.io/obsidian-quartz/styles.19109a40042e9f0e72e952fda4442a34.min.css rel=stylesheet><link href=https://wongd-hub.github.io/obsidian-quartz/styles/_light_syntax.86a48a52faebeaaf42158b72922b1c90.min.css rel=stylesheet id=theme-link><script src=https://wongd-hub.github.io/obsidian-quartz/js/darkmode.df266a900377a99b203da11b154c20ec.min.js></script>
 <script src=https://wongd-hub.github.io/obsidian-quartz/js/util.00639692264b21bc3ee219733d38a8be.min.js></script>
 <link rel=preload href=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css as=style onload='this.onload=null,this.rel="stylesheet"' integrity=sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js integrity=sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx crossorigin=anonymous></script>
 <script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin=anonymous></script>
@@ -9,12 +12,342 @@
 <script defer src=https://wongd-hub.github.io/obsidian-quartz/js/code-title.ce4a43f09239a9efb48fee342e8ef2df.min.js></script>
 <script defer src=https://wongd-hub.github.io/obsidian-quartz/js/clipboard.2913da76d3cb21c5deaa4bae7da38c9f.min.js></script>
 <script defer src=https://wongd-hub.github.io/obsidian-quartz/js/callouts.7723cac461d613d118ee8bb8216b9838.min.js></script>
-<script>const SEARCH_ENABLED=!1,LATEX_ENABLED=!0,PRODUCTION=!0,BASE_URL="https://wongd-hub.github.io/obsidian-quartz/",fetchData=Promise.all([fetch("https://wongd-hub.github.io/obsidian-quartz/indices/linkIndex.5c06af5b5504d0d9a2a7221349310d1d.min.json").then(e=>e.json()).then(e=>({index:e.index,links:e.links})),fetch("https://wongd-hub.github.io/obsidian-quartz/indices/contentIndex.74ca4272a726c697caa2a79d373f5773.min.json").then(e=>e.json())]).then(([{index:e,links:t},n])=>({index:e,links:t,content:n})),render=()=>{const e=new URL(BASE_URL),t=e.pathname,n=window.location.pathname,s=t==n;addCopyButtons(),addTitleToCodeBlocks(),addCollapsibleCallouts(),initPopover("https://wongd-hub.github.io/obsidian-quartz",!0);const o=document.getElementById("footer");if(o){const e=document.getElementById("graph-container");if(!e)return requestAnimationFrame(render);e.textContent="";const t=s&&!1;drawGraph("https://wongd-hub.github.io/obsidian-quartz",t,[{"/moc":"#4388cc"}],t?{centerForce:1,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.5,linkDistance:1,opacityScale:3,repelForce:1,scale:1.4}:{centerForce:1,depth:1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:3,repelForce:2,scale:1.2})}var i=document.getElementsByClassName("mermaid");i.length>0&&import("https://unpkg.com/mermaid@9/dist/mermaid.esm.min.mjs").then(e=>{e.default.init()});function a(n){const e=n.target,t=e.className.split(" "),s=t.includes("broken"),o=t.includes("internal-link");plausible("Link Click",{props:{href:e.href,broken:s,internal:o,graph:!1}})}const r=document.querySelectorAll("a");for(link of r)link.className.includes("root-title")&&link.addEventListener("click",a,{once:!0})},init=(e=document)=>{addCopyButtons(),addTitleToCodeBlocks(),renderMathInElement(e.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}],macros:{'’':"'"},throwOnError:!1})}</script><script type=module>
+<script>const SEARCH_ENABLED=!1,LATEX_ENABLED=!0,PRODUCTION=!0,BASE_URL="https://wongd-hub.github.io/obsidian-quartz/",fetchData=Promise.all([fetch("https://wongd-hub.github.io/obsidian-quartz/indices/linkIndex.ea7028f0abe87797c8e26cba5156e5dc.min.json").then(e=>e.json()).then(e=>({index:e.index,links:e.links})),fetch("https://wongd-hub.github.io/obsidian-quartz/indices/contentIndex.65011697225f6c9f0b16d528e1afc91e.min.json").then(e=>e.json())]).then(([{index:e,links:t},n])=>({index:e,links:t,content:n})),render=()=>{const e=new URL(BASE_URL),t=e.pathname,n=window.location.pathname,s=t==n;addCopyButtons(),addTitleToCodeBlocks(),addCollapsibleCallouts(),initPopover("https://wongd-hub.github.io/obsidian-quartz",!0);const o=document.getElementById("footer");if(o){const e=document.getElementById("graph-container");if(!e)return requestAnimationFrame(render);e.textContent="";const t=s&&!1;drawGraph("https://wongd-hub.github.io/obsidian-quartz",t,[{"/moc":"#4388cc"}],t?{centerForce:1,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.5,linkDistance:1,opacityScale:3,repelForce:1,scale:1.4}:{centerForce:1,depth:1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:3,repelForce:2,scale:1.2})}var i=document.getElementsByClassName("mermaid");i.length>0&&import("https://unpkg.com/mermaid@9/dist/mermaid.esm.min.mjs").then(e=>{e.default.init()});function a(n){const e=n.target,t=e.className.split(" "),s=t.includes("broken"),o=t.includes("internal-link");plausible("Link Click",{props:{href:e.href,broken:s,internal:o,graph:!1}})}const r=document.querySelectorAll("a");for(link of r)link.className.includes("root-title")&&link.addEventListener("click",a,{once:!0})},init=(e=document)=>{addCopyButtons(),addTitleToCodeBlocks(),renderMathInElement(e.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}],macros:{'’':"'"},throwOnError:!1})}</script><script type=module>
     import { attachSPARouting } from "https:\/\/wongd-hub.github.io\/obsidian-quartz\/js\/router.d6fe6bd821db9ea97f9aeefae814d8e7.min.js"
     attachSPARouting(init, render)
   </script><script defer data-domain=wongd-hub.github.io/obsidian-quartz src=https://plausible.io/js/script.js></script>
 <script>window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}</script></head><body><div id=search-container><div id=search-space><input autocomplete=off id=search-bar name=search type=text aria-label=Search placeholder="Search for something..."><div id=results-container></div></div></div><script src=https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js integrity="sha256-i3A0NZGkhsKjVMzFxv3ksk0DZh3aXqu0l49Bbh0MdjE=" crossorigin=anonymous defer></script>
 <script defer src=https://wongd-hub.github.io/obsidian-quartz/js/full-text-search.e6e2e0c213187ca0c703d6e2c7a77fcd.min.js></script><div class=singlePage><header><h1 id=page-title><a class=root-title href=https://wongd-hub.github.io/obsidian-quartz/>The Second 🧠</a></h1><div class=spacer></div><div id=search-icon><p>Search</p><svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search Icon</title><desc id="desc">Icon to open search</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/><circle cx="8" cy="8" r="7"/></g></svg></div><div class=darkmode><input class=toggle id=darkmode-toggle type=checkbox tabindex=-1>
 <label id=toggle-label-light for=darkmode-toggle tabindex=-1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="dayIcon" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35"><title>Light Mode</title><path d="M6 17.5C6 16.672 5.328 16 4.5 16h-3C.672 16 0 16.672.0 17.5S.672 19 1.5 19h3C5.328 19 6 18.328 6 17.5zM7.5 26c-.414.0-.789.168-1.061.439l-2 2C4.168 28.711 4 29.086 4 29.5 4 30.328 4.671 31 5.5 31c.414.0.789-.168 1.06-.44l2-2C8.832 28.289 9 27.914 9 27.5 9 26.672 8.329 26 7.5 26zm10-20C18.329 6 19 5.328 19 4.5v-3C19 .672 18.329.0 17.5.0S16 .672 16 1.5v3C16 5.328 16.671 6 17.5 6zm10 3c.414.0.789-.168 1.06-.439l2-2C30.832 6.289 31 5.914 31 5.5 31 4.672 30.329 4 29.5 4c-.414.0-.789.168-1.061.44l-2 2C26.168 6.711 26 7.086 26 7.5 26 8.328 26.671 9 27.5 9zM6.439 8.561C6.711 8.832 7.086 9 7.5 9 8.328 9 9 8.328 9 7.5c0-.414-.168-.789-.439-1.061l-2-2C6.289 4.168 5.914 4 5.5 4 4.672 4 4 4.672 4 5.5c0 .414.168.789.439 1.06l2 2.001zM33.5 16h-3c-.828.0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5h3c.828.0 1.5-.672 1.5-1.5S34.328 16 33.5 16zM28.561 26.439C28.289 26.168 27.914 26 27.5 26c-.828.0-1.5.672-1.5 1.5.0.414.168.789.439 1.06l2 2C28.711 30.832 29.086 31 29.5 31c.828.0 1.5-.672 1.5-1.5.0-.414-.168-.789-.439-1.061l-2-2zM17.5 29c-.829.0-1.5.672-1.5 1.5v3c0 .828.671 1.5 1.5 1.5s1.5-.672 1.5-1.5v-3C19 29.672 18.329 29 17.5 29zm0-22C11.71 7 7 11.71 7 17.5S11.71 28 17.5 28 28 23.29 28 17.5 23.29 7 17.5 7zm0 18c-4.136.0-7.5-3.364-7.5-7.5s3.364-7.5 7.5-7.5 7.5 3.364 7.5 7.5S21.636 25 17.5 25z"/></svg></label><label id=toggle-label-dark for=darkmode-toggle tabindex=-1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="nightIcon" viewBox="0 0 100 100" style="enable-background='new 0 0 100 100'"><title>Dark Mode</title><path d="M96.76 66.458c-.853-.852-2.15-1.064-3.23-.534-6.063 2.991-12.858 4.571-19.655 4.571C62.022 70.495 50.88 65.88 42.5 57.5 29.043 44.043 25.658 23.536 34.076 6.47c.532-1.08.318-2.379-.534-3.23-.851-.852-2.15-1.064-3.23-.534-4.918 2.427-9.375 5.619-13.246 9.491-9.447 9.447-14.65 22.008-14.65 35.369.0 13.36 5.203 25.921 14.65 35.368s22.008 14.65 35.368 14.65c13.361.0 25.921-5.203 35.369-14.65 3.872-3.871 7.064-8.328 9.491-13.246C97.826 68.608 97.611 67.309 96.76 66.458z"/></svg></label></div></header><article><h1>Cookies and Sessions</h1><p class=meta>Last updated
-Mar 7, 2025
-<a href=https://github.com/wongd-hub/obsidian-quartz/tree/hugo/content/computer-science/course-frontmatters/Cookies%20and%20Sessions.md rel=noopener>Edit Source</a></p><ul class=tags></ul><p>#course_cs50</p></article><hr><div class=page-end id=footer><div class=backlinks-container><h3>Backlinks</h3><ul class=backlinks><li>No backlinks found</li></ul></div><div><script src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><h3>Interactive Graph</h3><div id=graph-container></div><style>:root{--g-node:var(--secondary);--g-node-active:var(--primary);--g-node-inactive:var(--visited);--g-link:var(--outlinegray);--g-link-active:#5a7282}</style><script src=https://wongd-hub.github.io/obsidian-quartz/js/graph.6579af7b10c818dbd2ca038702db0224.js></script></div></div><div id=contact_buttons><footer><p>Made by Darren Wong using <a href=https://github.com/jackyzha0/quartz>Quartz</a>, © 2025</p><ul><li><a href=https://wongd-hub.github.io/obsidian-quartz/>Home</a></li><li><a href=https://www.herdmentality.xyz/>Herd Mentality (Blog)</a></li><li><a href=https://github.com/wongd-hub>GitHub</a></li></ul></footer></div></div></body></html>
+Mar 8, 2025
+<a href=https://github.com/wongd-hub/obsidian-quartz/tree/hugo/content/computer-science/course-frontmatters/Cookies%20and%20Sessions.md rel=noopener>Edit Source</a></p><ul class=tags></ul><aside class=mainTOC><details><summary>Table of Contents</summary><nav id=TableOfContents><ol><li><a href=#apppy>app.py</a></li><li><a href=#layouthtml>layout.html</a></li><li><a href=#indexhtml>index.html</a></li><li><a href=#loginhtml>login.html</a></li></ol><ol><li><a href=#sql-lite-shop-items-table>SQL Lite shop items table</a></li><li><a href=#apppy-1>app.py</a></li><li><a href=#bookshtml>books.html</a></li><li><a href=#cartshtml>carts.html</a></li></ol><ol><li><a href=#apppy-2>app.py</a></li><li><a href=#indexhtml-1>index.html</a></li></ol></nav></details></aside><p>#course_cs50</p><ul><li>This is how websites are able to remember that you logged in already or your preferences persistently. In other words, cookies allow the website to be stateful - and remember something about you.<ul><li>Their hidden nature allows advertisers and other websites to track your browsing as well.</li></ul></li></ul><blockquote class=note-callout><p>Even if you delete your cookies, it&rsquo;s very likely a server can still identify you with high likelihood based on your IP address, the fonts and extensions you have installed, etc.</p></blockquote><a href=#logging-in><h1 id=logging-in><span class=hanchor arialabel=Anchor># </span>Logging in</h1></a><ul><li>When you navigate to Google, your browser sends an envelope to the server:</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>GET / HTTP/2
+</span></span><span class=line><span class=cl>Host: accounts.google.com
+</span></span><span class=line><span class=cl>...
+</span></span></code></pre></td></tr></table></div></div><ul><li>If you logged in successfully, you&rsquo;ll get a response back from the server:<ul><li>The first two lines are what we&rsquo;ve seen before and are just the contents of the webpage.</li><li>The last line, <code>Set-Cookie</code>, specifies a key-value pair where the value is some unique identifier.<ul><li>This is essentially the server stamping your hand and saying you&rsquo;ve already logged in. This stores the value in the browser&rsquo;s memory for a defined amount of time.</li><li><em>Session</em> is a word that describes the maintenance of state between a client and a server. So if the server is remembering something about you, you have a session with that server. e.g. a shopping cart.</li></ul></li></ul></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>HTTP/2 200
+</span></span><span class=line><span class=cl>Content-Type: text/html
+</span></span><span class=line><span class=cl>Set-Cookie: session=value
+</span></span><span class=line><span class=cl>...
+</span></span></code></pre></td></tr></table></div></div><ul><li>Now, if you have a valid cookie, your browser will send the cookie back to the server whenever you revisit the website:</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>GET / HTTP/2
+</span></span><span class=line><span class=cl>Host: accounts.google.com
+</span></span><span class=line><span class=cl>Cookie: session=value
+</span></span><span class=line><span class=cl>...
+</span></span></code></pre></td></tr></table></div></div><a href=#examples-using-cookies-in-flask><h1 id=examples-using-cookies-in-flask><span class=hanchor arialabel=Anchor># </span>Examples: Using cookies in Flask</h1></a><ul><li><a href=/obsidian-quartz/computer-science/course-frontmatters/Flask rel=noopener class=internal-link data-src=/obsidian-quartz/computer-science/course-frontmatters/Flask>Flask</a> allows you to do this relatively easily.</li><li><code>session</code>, imported from <code>flask</code>, is essentially an empty dictionary ready for key-value pairs to be placed into it.<ul><li>This is distinct from the <code>REGISTRANTS</code> dictionary defined in the <a href=/obsidian-quartz/computer-science/course-frontmatters/Flask#examples-frosh-ims rel=noopener class=internal-link data-src=/obsidian-quartz/computer-science/course-frontmatters/Flask>Flask Frosh IMs example</a>. That dictionary would not persist when the user closes the tab, and it is also global - any user can access it.</li><li>Information is stored in <code>./flask_session/</code>.</li></ul></li></ul><a href=#apppy><h2 id=apppy><span class=hanchor arialabel=Anchor># </span>app.py</h2></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=kn>from</span> <span class=nn>flask</span> <span class=kn>import</span> <span class=n>Flask</span><span class=p>,</span> <span class=n>redirect</span><span class=p>,</span> <span class=n>render_template</span><span class=p>,</span> <span class=n>request</span><span class=p>,</span> <span class=n>session</span>
+</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>flask_session</span> <span class=kn>import</span> <span class=n>Session</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>app</span> <span class=o>=</span> <span class=n>Flask</span><span class=p>(</span><span class=vm>__name__</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Configure cookies - So the cookie is deleted when you quit the browser</span>
+</span></span><span class=line><span class=cl><span class=n>app</span><span class=o>.</span><span class=n>config</span><span class=p>[</span><span class=s2>&#34;SESSION_PERMANENT&#34;</span><span class=p>]</span> <span class=o>=</span> <span class=kc>False</span> 
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Configure cookies - So the cookie is stored in the server&#39;s files, not in</span>
+</span></span><span class=line><span class=cl><span class=c1># the cookie itself for privacy&#39;s sake</span>
+</span></span><span class=line><span class=cl><span class=n>app</span><span class=o>.</span><span class=n>config</span><span class=p>[</span><span class=s2>&#34;SESSION_TYPE&#34;</span><span class=p>]</span> <span class=o>=</span> <span class=s2>&#34;filesystem&#34;</span>
+</span></span><span class=line><span class=cl><span class=n>Session</span><span class=p>(</span><span class=n>app</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>app</span><span class=o>.</span><span class=n>config</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nd>@app</span><span class=o>.</span><span class=n>route</span><span class=p>(</span><span class=s2>&#34;/&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>index</span><span class=p>():</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>render_template</span><span class=p>(</span><span class=s2>&#34;index.html&#34;</span><span class=p>,</span> <span class=n>name</span><span class=o>=</span><span class=n>session</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=s2>&#34;name&#34;</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nd>@app</span><span class=o>.</span><span class=n>route</span><span class=p>(</span><span class=s2>&#34;/login&#34;</span><span class=p>,</span> <span class=n>methods</span><span class=o>=</span><span class=p>[</span><span class=s2>&#34;GET&#34;</span><span class=p>,</span> <span class=s2>&#34;POST&#34;</span><span class=p>])</span>
+</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>login</span><span class=p>():</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=n>request</span><span class=o>.</span><span class=n>method</span> <span class=o>==</span> <span class=s2>&#34;POST&#34;</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=n>session</span><span class=p>[</span><span class=s2>&#34;name&#34;</span><span class=p>]</span> <span class=o>=</span> <span class=n>request</span><span class=o>.</span><span class=n>form</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=s2>&#34;name&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>redirect</span><span class=p>(</span><span class=s2>&#34;/&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>render_template</span><span class=p>(</span><span class=s2>&#34;login.html&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nd>@app</span><span class=o>.</span><span class=n>route</span><span class=p>(</span><span class=s2>&#34;/logout&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>logout</span><span class=p>():</span>
+</span></span><span class=line><span class=cl>    <span class=n>session</span><span class=o>.</span><span class=n>clear</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>redirect</span><span class=p>(</span><span class=s2>&#34;/&#34;</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><a href=#layouthtml><h2 id=layouthtml><span class=hanchor arialabel=Anchor># </span>layout.html</h2></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=cp>&lt;!DOCTYPE html&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>html</span> <span class=na>lang</span><span class=o>=</span><span class=s>&#34;en&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>head</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=p>&lt;</span><span class=nt>meta</span> <span class=na>name</span><span class=o>=</span><span class=s>&#34;viewport&#34;</span> <span class=na>content</span><span class=o>=</span><span class=s>&#34;initial-scale=1, width=device-width&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=p>&lt;</span><span class=nt>title</span><span class=p>&gt;</span>froshims<span class=p>&lt;/</span><span class=nt>title</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;/</span><span class=nt>head</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>body</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>        {% block body %}{% endblock %}
+</span></span><span class=line><span class=cl>    <span class=p>&lt;/</span><span class=nt>body</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>html</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><a href=#indexhtml><h2 id=indexhtml><span class=hanchor arialabel=Anchor># </span>index.html</h2></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl>{% extends &#34;layout.html&#34; %}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>{% block body %}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    {% if name %}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        You are logged in as {{ name }}. <span class=p>&lt;</span><span class=nt>a</span> <span class=na>href</span><span class=o>=</span><span class=s>&#34;/logout&#34;</span><span class=p>&gt;</span>Log out<span class=p>&lt;/</span><span class=nt>a</span><span class=p>&gt;</span>.
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    {% else %}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        You are not logged in. <span class=p>&lt;</span><span class=nt>a</span> <span class=na>href</span><span class=o>=</span><span class=s>&#34;/login&#34;</span><span class=p>&gt;</span>Log in<span class=p>&lt;/</span><span class=nt>a</span><span class=p>&gt;</span>.
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    {% endif %}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>{% endblock %}
+</span></span></code></pre></td></tr></table></div></div><a href=#loginhtml><h2 id=loginhtml><span class=hanchor arialabel=Anchor># </span>login.html</h2></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl>{% extends &#34;layout.html&#34; %}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>{% block body %}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>form</span> <span class=na>action</span><span class=o>=</span><span class=s>&#34;/login&#34;</span> <span class=na>method</span><span class=o>=</span><span class=s>&#34;post&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=p>&lt;</span><span class=nt>input</span> 
+</span></span><span class=line><span class=cl>            <span class=na>autocomplete</span><span class=o>=</span><span class=s>&#34;off&#34;</span> 
+</span></span><span class=line><span class=cl>            <span class=na>autofocus</span> 
+</span></span><span class=line><span class=cl>            <span class=na>name</span><span class=o>=</span><span class=s>&#34;name&#34;</span> 
+</span></span><span class=line><span class=cl>            <span class=na>placeholder</span><span class=o>=</span><span class=s>&#34;Name&#34;</span> 
+</span></span><span class=line><span class=cl>            <span class=na>type </span><span class=o>=</span> <span class=s>&#34;text&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=p>&lt;</span><span class=nt>button</span> <span class=na>type</span><span class=o>=</span><span class=s>&#34;Submit&#34;</span><span class=p>&gt;</span>Log In<span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;/</span><span class=nt>form</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>{% endblock %}
+</span></span></code></pre></td></tr></table></div></div><a href=#examples-shopping-cart><h1 id=examples-shopping-cart><span class=hanchor arialabel=Anchor># </span>Examples: Shopping cart</h1></a><ul><li>This uses a similar concept to <a href=/obsidian-quartz/computer-science/course-frontmatters/Flask#examples-if-we-want-to-use-a-sql-database-to-store-our-registrants rel=noopener class=internal-link data-src=/obsidian-quartz/computer-science/course-frontmatters/Flask>the last Flask example we saw</a> in that it gives each item in the shop a unique ID, so every &lsquo;Add to Cart&rsquo; button sends that unique ID to the form. This allows the cookie to keep track of exactly which item is in the cart.</li></ul><a href=#sql-lite-shop-items-table><h2 id=sql-lite-shop-items-table><span class=hanchor arialabel=Anchor># </span>SQL Lite shop items table</h2></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>sqlite&gt; SELECT * FROM books;
+</span></span><span class=line><span class=cl>+----+-----------------------------------------------+
+</span></span><span class=line><span class=cl>| id | title                                         |
+</span></span><span class=line><span class=cl>+----+-----------------------------------------------+
+</span></span><span class=line><span class=cl>|  1 | The Hitchhiker&#39;s Guide to the Galaxy          |
+</span></span><span class=line><span class=cl>|  2 | The Restaurant at the End of the Universe     |
+</span></span><span class=line><span class=cl>|  3 | Life, the Universe and Everything             |
+</span></span><span class=line><span class=cl>|  4 | So Long, and Thanks for All the Fish          |
+</span></span><span class=line><span class=cl>|  5 | Mostly Harmless                               |
+</span></span><span class=line><span class=cl>+----+-----------------------------------------------+
+</span></span></code></pre></td></tr></table></div></div><a href=#apppy-1><h2 id=apppy-1><span class=hanchor arialabel=Anchor># </span>app.py</h2></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=kn>from</span> <span class=nn>cs50</span> <span class=kn>import</span> <span class=n>SQL</span>
+</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>flask</span> <span class=kn>import</span> <span class=n>Flask</span><span class=p>,</span> <span class=n>redirect</span><span class=p>,</span> <span class=n>render_template</span><span class=p>,</span> <span class=n>request</span><span class=p>,</span> <span class=n>session</span>
+</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>flask_session</span> <span class=kn>import</span> <span class=n>Session</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Configur eapp</span>
+</span></span><span class=line><span class=cl><span class=n>app</span> <span class=o>=</span> <span class=n>Flask</span><span class=p>(</span><span class=vm>__name__</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Connect to DB</span>
+</span></span><span class=line><span class=cl><span class=n>db</span> <span class=o>=</span> <span class=n>SQL</span><span class=p>(</span><span class=s2>&#34;sqlite:///store.db&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Cofigure session</span>
+</span></span><span class=line><span class=cl><span class=n>app</span><span class=o>.</span><span class=n>config</span><span class=p>[</span><span class=s2>&#34;SESSION_PERMANENT&#34;</span><span class=p>]</span> <span class=o>=</span> <span class=kc>False</span>
+</span></span><span class=line><span class=cl><span class=n>app</span><span class=o>.</span><span class=n>config</span><span class=p>[</span><span class=s2>&#34;SESSION_TYPE&#34;</span><span class=p>]</span> <span class=o>=</span> <span class=s2>&#34;filesystem&#34;</span>
+</span></span><span class=line><span class=cl><span class=n>Session</span><span class=p>(</span><span class=n>app</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nd>@app</span><span class=o>.</span><span class=n>route</span><span class=p>(</span><span class=s2>&#34;/&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>index</span><span class=p>():</span>
+</span></span><span class=line><span class=cl>    <span class=c1># Returns a list of dictionaries</span>
+</span></span><span class=line><span class=cl>    <span class=n>books</span> <span class=o>=</span> <span class=n>db</span><span class=o>.</span><span class=n>execute</span><span class=p>(</span><span class=s2>&#34;SELECT * FROM books&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>render_template</span><span class=p>(</span><span class=s2>&#34;bookts.html&#34;</span><span class=p>,</span> <span class=n>books</span><span class=o>=</span><span class=n>books</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nd>@app</span><span class=o>.</span><span class=n>route</span><span class=p>(</span><span class=s2>&#34;/cart&#34;</span><span class=p>,</span> <span class=n>methods</span><span class=o>=</span><span class=p>[</span><span class=s2>&#34;GET&#34;</span><span class=p>,</span> <span class=s2>&#34;POST&#34;</span><span class=p>])</span>
+</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>cart</span><span class=p>():</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1># Ensure cart exists</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=s2>&#34;cart&#34;</span> <span class=ow>not</span> <span class=ow>in</span> <span class=n>session</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=n>session</span><span class=p>[</span><span class=s2>&#34;cart&#34;</span><span class=p>]</span> <span class=o>=</span> <span class=p>[]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1># POST</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=n>request</span><span class=o>.</span><span class=n>method</span> <span class=o>==</span> <span class=s2>&#34;POST&#34;</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=n>book_id</span> <span class=o>=</span> <span class=n>request</span><span class=o>.</span><span class=n>form</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=s2>&#34;id&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=n>book_id</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=n>session</span><span class=p>[</span><span class=s2>&#34;cart&#34;</span><span class=p>]</span><span class=o>.</span><span class=n>append</span><span class=p>(</span><span class=n>book_id</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=c1># Sends us back to this route, but with a GET</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>redirect</span><span class=p>(</span><span class=s2>&#34;/cart&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1># GET</span>
+</span></span><span class=line><span class=cl>    <span class=c1>#  `(?)` lets you plug a list into the query, and commas will be generated</span>
+</span></span><span class=line><span class=cl>    <span class=c1>#  for you.</span>
+</span></span><span class=line><span class=cl>    <span class=n>books</span> <span class=o>=</span> <span class=n>db</span><span class=o>.</span><span class=n>execute</span><span class=p>(</span><span class=s2>&#34;SELECT * FROM books WHERE id IN (?)&#34;</span><span class=p>,</span> <span class=n>session</span><span class=p>[</span><span class=s2>&#34;cart&#34;</span><span class=p>])</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>render_template</span><span class=p>(</span><span class=s2>&#34;cart.html&#34;</span><span class=p>,</span> <span class=n>books</span><span class=o>=</span><span class=n>books</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><a href=#bookshtml><h2 id=bookshtml><span class=hanchor arialabel=Anchor># </span>books.html</h2></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl>{% extends &#34;layout.html&#34; %}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>{% block body %}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>h1</span><span class=p>&gt;</span>Books<span class=p>&lt;/</span><span class=nt>h1</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    {% for book in books %}
+</span></span><span class=line><span class=cl>        <span class=p>&lt;</span><span class=nt>h2</span><span class=p>&gt;</span>{{ book[&#34;title&#34;] }}<span class=p>&lt;/</span><span class=nt>h2</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=p>&lt;</span><span class=nt>form</span> <span class=na>action</span><span class=o>=</span><span class=s>&#34;/cart&#34;</span> <span class=na>method</span><span class=o>=</span><span class=s>&#34;post&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=p>&lt;</span><span class=nt>input</span> 
+</span></span><span class=line><span class=cl>                <span class=na>name</span><span class=o>=</span><span class=s>&#34;id&#34;</span> 
+</span></span><span class=line><span class=cl>                <span class=na>type</span><span class=o>=</span><span class=s>&#34;hidden&#34;</span>
+</span></span><span class=line><span class=cl>                <span class=na>value</span><span class=o>=</span><span class=s>&#34;{{ book[&#39;id&#39;] }}&#34;</span>
+</span></span><span class=line><span class=cl>            <span class=p>&gt;</span>                
+</span></span><span class=line><span class=cl>            <span class=p>&lt;</span><span class=nt>button</span> <span class=na>type</span><span class=o>=</span><span class=s>&#34;Submit&#34;</span><span class=p>&gt;</span>Add to Cart<span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=p>&lt;/</span><span class=nt>form</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    {% endfor %}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>{% endblock %}
+</span></span></code></pre></td></tr></table></div></div><a href=#cartshtml><h2 id=cartshtml><span class=hanchor arialabel=Anchor># </span>carts.html</h2></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl>{% extends &#34;layout.html&#34; %}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>{% block body %}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>h1</span><span class=p>&gt;</span>Cart<span class=p>&lt;/</span><span class=nt>h1</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>ol</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>        {% for book in books %}
+</span></span><span class=line><span class=cl>            <span class=p>&lt;</span><span class=nt>li</span><span class=p>&gt;</span>{{ book[&#34;title&#34;] }}<span class=p>&lt;/</span><span class=nt>li</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>        {% endfor %}
+</span></span><span class=line><span class=cl>    <span class=p>&lt;/</span><span class=nt>ol</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>{% endblock %}
+</span></span></code></pre></td></tr></table></div></div><a href=#examples-scaling-up-the-data><h1 id=examples-scaling-up-the-data><span class=hanchor arialabel=Anchor># </span>Examples: Scaling up the data</h1></a><a href=#apppy-2><h2 id=apppy-2><span class=hanchor arialabel=Anchor># </span>app.py</h2></a><a href=#indexhtml-1><h2 id=indexhtml-1><span class=hanchor arialabel=Anchor># </span>index.html</h2></a></article><hr><div class=page-end id=footer><div class=backlinks-container><h3>Backlinks</h3><ul class=backlinks><li>No backlinks found</li></ul></div><div><script src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><h3>Interactive Graph</h3><div id=graph-container></div><style>:root{--g-node:var(--secondary);--g-node-active:var(--primary);--g-node-inactive:var(--visited);--g-link:var(--outlinegray);--g-link-active:#5a7282}</style><script src=https://wongd-hub.github.io/obsidian-quartz/js/graph.6579af7b10c818dbd2ca038702db0224.js></script></div></div><div id=contact_buttons><footer><p>Made by Darren Wong using <a href=https://github.com/jackyzha0/quartz>Quartz</a>, © 2025</p><ul><li><a href=https://wongd-hub.github.io/obsidian-quartz/>Home</a></li><li><a href=https://www.herdmentality.xyz/>Herd Mentality (Blog)</a></li><li><a href=https://github.com/wongd-hub>GitHub</a></li></ul></footer></div></div></body></html>
